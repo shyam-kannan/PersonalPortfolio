@@ -48,7 +48,7 @@ body.dark-mode {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh; /* Ensures full page height */
-}
+  overflow: hidden; /* Prevent scrolling */}
 
 body.dark-mode .page-container {
   background-color: var(--page-bg-color-dark);
@@ -438,10 +438,29 @@ body.dark-mode .hero-image img:hover {
   background: none;
   border: none;
   font-size: 24px;
+  cursor: pointer;
 }
 
 /* Stack content for mobile screens */
 @media (max-width: 768px) {
+
+  /* Make the text smaller on mobile screens */
+  h1 {
+    font-size: 1.8rem; /* Reduce size of main heading */
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  p {
+    font-size: 0.9rem; /* Adjust the paragraph font size */
+    line-height: 1.5;
+  }
+
+  .page-container {
+    padding: 10px; /* Reduce padding for mobile */
+  }
+
+  /* Stack the navigation vertically on mobile and make the dropdown work */
   .tab-navigation {
     flex-direction: column;
     position: absolute;
@@ -457,7 +476,7 @@ body.dark-mode .hero-image img:hover {
     display: flex;
   }
 
-  /* Show the hamburger button */
+  /* Show the hamburger button for mobile */
   .hamburger-menu {
     display: block;
   }
@@ -474,8 +493,8 @@ body.dark-mode .hero-image img:hover {
   }
 
   .profile-img {
-    width: 200px;
-    height: 200px;
+    width: 150px; /* Reduce image size for mobile */
+    height: 150px;
     object-fit: cover;
     border-radius: 50%;
   }
@@ -494,7 +513,7 @@ body.dark-mode .hero-image img:hover {
     margin-top: 20px;
   }
 
-  /* Adjust padding and margins */
+  /* Reduce margins and padding to make the content fit better on mobile */
   .hero-section {
     padding: 0;
   }
