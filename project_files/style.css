@@ -466,9 +466,22 @@ body.dark-mode .hero-image img:hover {
 /* Stack content for mobile screens */
 @media (max-width: 768px) {
 
-  /* Ensure body can scroll vertically */
+  /* Ensure body can scroll vertically and page grows based on content */
   body {
-    overflow-y: scroll;
+    overflow-y: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Make sure the page occupies the full height */
+  }
+
+  /* Ensure the page container grows with content and footer stays at bottom */
+  .page-container {
+    flex: 1;
+    padding: 20px; /* Increase padding for mobile */
+    max-width: 100vw; /* Ensure the content fits the viewport width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box; /* Include padding in the element's total width */
   }
 
   /* Make the text smaller on mobile screens */
@@ -483,12 +496,8 @@ body.dark-mode .hero-image img:hover {
     font-size: 0.9rem; /* Adjust the paragraph font size */
     line-height: 1.5;
     white-space: normal; /* Ensure paragraphs wrap */
-  }
-
-  .page-container {
-    padding: 10px; /* Reduce padding for mobile */
-    max-width: 100vw; /* Ensure the content fits the width of the viewport */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
+    padding-left: 15px;  /* Add padding to the left */
+    padding-right: 15px; /* Add padding to the right */
   }
 
   /* Stack the navigation vertically on mobile and make the dropdown work */
@@ -544,7 +553,6 @@ body.dark-mode .hero-image img:hover {
     gap: 10px;
     margin-bottom: 20px;
     max-width: 100vw; /* Fit within viewport width */
-    padding: 0 10px; /* Add a bit of padding */
   }
 
   /* Ensure hero-text comes after the image and links */
@@ -552,7 +560,8 @@ body.dark-mode .hero-image img:hover {
     order: 2; /* Ensures the text comes after the image */
     text-align: center;
     margin-bottom: 20px;
-    padding: 0 10px; /* Add a bit of padding to fit in the viewport */
+    padding-left: 20px; /* Add more padding to the sides */
+    padding-right: 20px; /* Add more padding to the sides */
   }
 
   .hero-buttons {
@@ -574,9 +583,17 @@ body.dark-mode .hero-image img:hover {
     max-width: 100%; /* Ensure section fits within screen */
   }
 
+  /* Footer will always stay at the bottom of the page */
   footer {
     text-align: center;
     padding: 10px;
     max-width: 100vw; /* Ensure footer fits within viewport */
+    margin-top: auto; /* Push the footer to the bottom */
+  }
+
+  /* Footer line adjusts for mobile */
+  .footer-line {
+    width: 100%;
+    margin-top: 10px;
   }
 }
