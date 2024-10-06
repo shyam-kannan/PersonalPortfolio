@@ -465,39 +465,6 @@ body.dark-mode .hero-image img:hover {
 
 /* Stack content for mobile screens */
 @media (max-width: 768px) {
-
-  /* Ensure the body allows vertical scrolling */
-  body {
-    height: auto;
-    overflow-y: scroll; /* Allow vertical scrolling */
-    display: block;
-  }
-
-  /* Ensure the page container grows with content and footer stays at bottom */
-  .page-container {
-    min-height: 100vh; /* Ensure the page container occupies full height */
-    padding: 20px; /* Increase padding for mobile */
-    box-sizing: border-box; /* Include padding in the element's width */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-  }
-
-  /* Make the text smaller on mobile screens */
-  h1 {
-    font-size: 1.5rem; /* Reduce size of main heading */
-    text-align: center;
-    margin-bottom: 20px;
-    white-space: normal; /* Allow text to wrap */
-  }
-
-  p {
-    font-size: 0.9rem; /* Adjust the paragraph font size */
-    line-height: 1.5;
-    padding-left: 20px;
-    padding-right: 20px;
-    word-wrap: break-word;
-  }
-
-  /* Stack the navigation vertically on mobile and make the dropdown work */
   .tab-navigation {
     flex-direction: column;
     position: absolute;
@@ -513,85 +480,49 @@ body.dark-mode .hero-image img:hover {
     display: flex;
   }
 
-  /* Show the hamburger button for mobile */
+  /* Show the hamburger button */
   .hamburger-menu {
     display: block;
   }
 
-  /* Update hero-content to stack image and links above text */
   .hero-content {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    width: 100%;
+    align-items: flex-start;
   }
 
-  /* Move the hero-image and social links to be above the text */
-  .hero-image {
-    order: 1; /* Ensures the image comes first */
-    margin-bottom: 10px;
+  .hero-image, .social-links {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    width: 100%;
     align-items: center;
   }
 
   .profile-img {
-    max-width: 150px;
-    max-height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    margin-bottom: 10px;
+    width: 100px;
+    height: 100px;
   }
 
-  .social-links {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
-    max-width: 100vw; /* Fit within viewport width */
-  }
-
-  /* Ensure hero-text comes after the image and links */
-  .hero-text {
-    order: 2; /* Ensures the text comes after the image */
+  .typewriter {
+    font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 20px;
-    padding-left: 20px; /* Add more padding to the sides */
-    padding-right: 20px; /* Add more padding to the sides */
   }
 
-  .hero-buttons {
+  .social-links a {
     display: flex;
-    justify-content: center;
-    margin-top: 10px;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
   }
 
-  /* Typing animation adjustments for mobile */
-  .typewriter h1 {
-    font-size: 1.3rem; /* Smaller for mobile */
-    white-space: normal; /* Allow text to wrap */
-    word-wrap: break-word;
+  .social-links img {
+    width: 30px;
+    height: 30px;
   }
 
-  /* Reduce margins and padding to make the content fit better on mobile */
-  .hero-section {
-    padding: 0;
-    width: 100%; /* Ensure section fits within screen */
-    max-width: 100%;
-  }
-
-  /* Ensure the footer sticks to the bottom */
   footer {
     text-align: center;
     padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  /* Footer line adjustments for mobile */
-  .footer-line {
-    width: 100%;
-    margin-top: 10px;
   }
 }
