@@ -48,7 +48,7 @@ body.dark-mode {
   justify-content: space-between;
   align-items: center;
   min-height: 100vh; /* Ensures full page height */
-  overflow: hidden; /* Prevent scrolling */}
+}
 
 body.dark-mode .page-container {
   background-color: var(--page-bg-color-dark);
@@ -387,95 +387,146 @@ body.dark-mode .cursor-hidden {
   animation: none;
 }
 
-/* Stack content for mobile screens */
+
+/* Aesthetics */
+/* Gradient Background for light mode */
+body {
+  background: linear-gradient(120deg, #f0f0f0, #ffffff);
+}
+
+body.dark-mode {
+  background: linear-gradient(120deg, #1a1a1a, #000000);
+}
+
+
+.download-cv-btn:hover {
+  background-color: #00ff88; /* Brighter green on hover */
+  box-shadow: 0px 8px 20px rgba(0, 255, 136, 0.3); /* Stronger shadow */
+}
+
+/* Glowing effect on profile picture */
+.hero-image img {
+  border: 3px solid transparent;
+  box-shadow: 0px 0px 20px rgba(7, 7, 7, 0.3);
+}
+
+.hero-image img:hover {
+  box-shadow: 0px 0px 30px rgba(10, 10, 10, 0.5);
+}
+
+body.dark-mode .hero.hero-image img {
+  border: 3px solid transparent;
+  box-shadow: 0px 0px 20px rgba(255, 251, 251, 0.3);
+}
+
+body.dark-mode .hero-image img:hover {
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+}
+
+.hero-image img:hover {
+  transform: rotate(5deg); /* Tilts the image slightly */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* General Mobile Styles */
 @media (max-width: 768px) {
-
-  /* Ensure body can scroll vertically and page grows based on content */
-  /* Ensure the body allows vertical scrolling */
+  /* Body */
   body {
-    overflow-y: auto;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Make sure the page occupies the full height */
-    overflow-y: scroll; /* Allow vertical scrolling */
-    display: block;
+    font-size: 0.85rem; /* Reduce font size */
+    padding: 0 5px; /* Minimize padding */
   }
 
-  /* Ensure the page container grows with content and footer stays at bottom */
+  /* Page Container */
   .page-container {
-    flex: 1;
-    min-height: 100vh; /* Ensure the page container occupies full height */
-    padding: 20px; /* Increase padding for mobile */
-    max-width: 100vw; /* Ensure the content fits the viewport width */
-    box-sizing: border-box; /* Include padding in the element's width */
-    overflow-x: hidden; /* Prevent horizontal scrolling */
-    box-sizing: border-box; /* Include padding in the element's total width */
+    padding: 15px; /* Minimize padding */
+    max-width: 100%; /* Ensure full width usage */
+    width: 100%;
   }
 
-  /* Make the text smaller on mobile screens */
-  h1 {
-    font-size: 1.8rem; /* Reduce size of main heading */
-    font-size: 1.5rem; /* Reduce size of main heading */
-    text-align: center;
-    margin-bottom: 20px;
-    white-space: normal; /* Allow text to wrap */
-@@ -495,9 +492,9 @@
-  p {
-    font-size: 0.9rem; /* Adjust the paragraph font size */
-    line-height: 1.5;
-    white-space: normal; /* Ensure paragraphs wrap */
-    padding-left: 15px;  /* Add padding to the left */
-    padding-right: 15px; /* Add padding to the right */
-    padding-left: 20px;
-    padding-right: 20px;
-    word-wrap: break-word;
+  /* Navigation */
+  .nav-container {
+    padding-top: 20px; /* Reduce padding */
   }
 
-  /* Stack the navigation vertically on mobile and make the dropdown work */
-@@ -526,7 +523,7 @@
+  .tab-navigation .tab {
+    font-size: 0.7rem; /* Smaller font for nav links */
+    padding: 6px 8px; /* Minimize padding */
+  }
+
+  /* Header Styling */
+  h1, h2, h3, p {
+    font-size: 0.95rem; /* Further reduce header font sizes */
+    line-height: 1.1; /* Adjust line height */
+    margin-bottom: 5px; /* Reduce margin between elements */
+  }
+
+  .hire-me-title {
+    font-size: 1.6rem; /* Smaller title */
+    margin-bottom: 8px; /* Reduce space below the title */
+  }
+
+  .hire-me-text {
+    font-size: 0.85rem; /* Adjust text size */
+    margin-bottom: 10px; /* Reduce margin */
+  }
+
+  /* Buttons styling */
+  .tab-button {
+    padding: 6px 10px; /* Smaller padding */
+    font-size: 0.7rem; /* Reduce font size */
+    margin-bottom: 10px; /* Reduce margin between buttons */
+  }
+
+  /* Picture container and scaling */
+  .profile-picture {
+    max-width: 80px; /* Reduce image size */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Reduce margin */
+  }
+
+  /* Social Links */
+  .social-links {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 100%; /* Fit content within the screen width */
-    width: 100%;
+    justify-content: center;
+    margin-bottom: 10px; /* Reduce space between links */
   }
 
-  /* Move the hero-image and social links to be above the text */
-@@ -572,28 +569,29 @@
-
-  /* Typing animation adjustments for mobile */
-  .typewriter h1 {
-    font-size: 1.8rem; /* Make the typing animation text smaller */
-    font-size: 1.3rem; /* Smaller for mobile */
-    white-space: normal; /* Allow text to wrap */
-    word-wrap: break-word; /* Break words if necessary */
-    word-wrap: break-word;
+  .social-links a {
+    font-size: 0.7rem; /* Smaller link size */
+    padding: 4px; /* Adjust padding */
+    margin-right: 5px; /* Reduce space between icons */
   }
 
-  /* Reduce margins and padding to make the content fit better on mobile */
-  .hero-section {
-    padding: 0;
-    max-width: 100%; /* Ensure section fits within screen */
-    width: 100%; /* Ensure section fits within screen */
-    max-width: 100%;
+  /* Horizontal Timeline */
+  .timeline-container {
+    padding: 15px 0; /* Reduce padding */
+    margin-top: -30px; /* Adjust margin to avoid excess space */
   }
 
-  /* Footer will always stay at the bottom of the page */
-  /* Ensure the footer sticks to the bottom */
+  .timeline-item .timeline-circle {
+    width: 35px; /* Shrink circles */
+    height: 35px;
+  }
+
+  .timeline-description h3 {
+    font-size: 0.85rem; /* Smaller company name font */
+  }
+
+  .timeline-description p {
+    font-size: 0.7rem; /* Smaller role font */
+  }
+
+  /* Footer */
   footer {
-    text-align: center;
-    padding: 10px;
-    max-width: 100vw; /* Ensure footer fits within viewport */
-    margin-top: auto; /* Push the footer to the bottom */
-    width: 100%;
-    box-sizing: border-box;
+    padding: 10px 0;
   }
 
-  /* Footer line adjusts for mobile */
-  /* Footer line adjustments for mobile */
-  .footer-line {
-    width: 100%;
-    margin-top: 10px;
+  .footer-content p {
+    font-size: 0.7rem; /* Smaller footer text */
+  }
+
+  /* Reduce space between sections */
+  .content-container, .hire-me-container {
+    margin-bottom: 5px; /* Minimize margin between sections */
   }
 }
