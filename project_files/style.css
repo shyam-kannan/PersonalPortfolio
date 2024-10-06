@@ -387,6 +387,26 @@ body.dark-mode .cursor-hidden {
   animation: none;
 }
 
+/* Typing effect adjustments for mobile screens */
+@media (max-width: 768px) {
+  .typewriter {
+    font-size: 1.8rem;  /* Smaller font for mobile devices */
+    font-weight: 600;
+    border-right: 1px solid var(--hover-color);  /* Adjust cursor size for mobile */
+    animation: typing-mobile 2.5s steps(25) 1s 1 normal both, blink 0.5s step-end infinite;
+    margin-bottom: 15px;
+  }
+
+  /* Mobile specific typing animation */
+  @keyframes typing-mobile {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}
 
 /* Aesthetics */
 /* Gradient Background for light mode */
