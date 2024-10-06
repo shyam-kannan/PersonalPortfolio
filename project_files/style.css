@@ -16,7 +16,8 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  overflow: hidden; /* Prevent scrolling */
+  /* Remove overflow: hidden to allow scrolling on small screens */
+  overflow-x: hidden; /* Keep horizontal scrolling hidden */
 }
 
 body {
@@ -428,78 +429,102 @@ body.dark-mode .hero-image img:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-/* General mobile styles */
+/* Mobile Styles */
 @media (max-width: 768px) {
-  /* Adjust padding for the page container */
+  /* Adjust page container padding for smaller screens */
   .page-container {
     padding: 20px;
   }
 
-  /* Make the text larger and more readable on smaller screens */
-  h1, h2, h3, p {
-    font-size: 90%; /* Scale down fonts */
-    line-height: 1.5; /* Increase spacing */
+  /* Reduce the size of headings */
+  h1 {
+    font-size: 2rem;
   }
 
-  /* Adjust the navigation bar */
+  h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  /* Scale down the tab navigation */
   .tab-navigation {
-    flex-direction: column; /* Stack items vertically */
-    gap: 15px; /* Reduce gap between links */
+    padding: 5px;
+    gap: 10px;
   }
 
-  /* Adjust buttons */
+  .tab-navigation .tab {
+    padding: 8px 10px;
+    font-size: 0.9rem;
+  }
+
+  /* Make the buttons a bit smaller */
   .tab-button {
-    width: 100%;
-    margin: 10px 0;
+    padding: 8px 15px;
+    font-size: 0.9rem;
   }
 
-  /* Ensure images scale properly */
-  .timeline-circle img {
-    width: 80%; /* Smaller logo size */
-    height: 80%;
-  }
-
-  /* Adjust the experience timeline for smaller screens */
+  /* Reduce the timeline size */
   .timeline-item {
-    width: 100px; /* Make the timeline items smaller */
+    width: 100px; /* Smaller timeline items */
   }
 
-  /* Adjust footer and copyright line */
+  .timeline-circle img {
+    width: 70%;
+    height: 70%;
+  }
+
+  /* Adjust footer font size */
   footer {
     font-size: 12px;
   }
 }
 
-/* Further adjustments for very small screens */
+/* Very Small Screens (max-width 480px) */
 @media (max-width: 480px) {
-  /* Further reduce the container padding */
   .page-container {
-    padding: 10px;
+    padding: 15px;
   }
 
-  /* Scale down the font sizes even more */
-  h1, h2, h3, p {
-    font-size: 80%;
+  h1 {
+    font-size: 1.8rem;
   }
 
-  /* Stack the navigation bar vertically */
+  h2, h3 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+
   .tab-navigation {
-    gap: 10px;
+    gap: 5px;
   }
 
-  /* Adjust the timeline items even more */
+  .tab-navigation .tab {
+    padding: 6px 8px;
+    font-size: 0.8rem;
+  }
+
+  .tab-button {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
   .timeline-item {
     width: 80px;
   }
+
+  .timeline-circle img {
+    width: 60%;
+    height: 60%;
+  }
+
+  footer {
+    font-size: 10px;
+  }
 }
-
-
-
-
-
-
-
-
-
-
-
