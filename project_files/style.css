@@ -531,3 +531,106 @@ body.dark-mode .hero-image img:hover {
   }
 }
 
+/* Mobile specific styles for about page */
+
+@media only screen and (max-width: 768px) {
+  /* Ensure the navigation becomes a dropdown on small screens */
+  .nav-container {
+    display: none;
+  }
+
+  /* Show hamburger menu */
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    color: var(--text-color-light);
+    padding: 10px;
+  }
+
+  /* Dropdown menu for mobile */
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: var(--page-bg-color-light);
+    width: 100%;
+    left: 0;
+    top: 50px;
+    padding: 20px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .dropdown-menu.active {
+    display: flex;
+  }
+
+  .dropdown-menu li {
+    list-style: none;
+    margin: 10px 0;
+  }
+
+  .dropdown-menu li a {
+    text-decoration: none;
+    color: var(--text-color-light);
+    font-weight: 600;
+    padding: 10px;
+    display: block;
+    text-align: center;
+  }
+
+  /* Hero section stacking */
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-text, .hero-image {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  .hero-image img {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Adjust font size for smaller screens */
+  .hero-text h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+
+  .download-cv-btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  /* Social links size and alignment */
+  .social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-links a {
+    font-size: 0.9rem;
+  }
+
+  .social-links img {
+    width: 30px;
+    height: 30px;
+  }
+
+  /* Footer adjustments */
+  footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
