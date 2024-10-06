@@ -428,196 +428,76 @@ body.dark-mode .hero-image img:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Mobile Styles for About Page */
-@media only screen and (max-width: 768px) {
-  /* General body styling */
-  body {
-    overflow-x: hidden;
-    padding: 0 10px; /* Add padding for mobile responsiveness */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+/* Dropdown Menu - Hidden by default */
+.dropdown-menu {
+  display: none;
+  list-style-type: none;
+  background-color: var(--page-bg-color-light);
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  width: 90%;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.dropdown-menu li {
+  padding: 10px 0;
+}
+
+.dropdown-menu li a {
+  color: var(--text-color-light);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.hamburger-menu {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+}
+@media (max-width: 768px) {
+  /* Hide the tab navigation on small screens */
+  .tab-navigation {
+    display: none;
   }
 
-  /* Page Container */
+  /* Show hamburger menu on small screens */
+  .hamburger-menu {
+    display: block;
+  }
+
+  .dropdown-menu li {
+    text-align: center;
+  }
+
+  /* Main page layout changes for smaller screens */
   .page-container {
     padding: 20px;
-    width: 100%; /* Full width for mobile */
-    max-width: 100%;
-  }
-
-  /* Navigation Bar */
-  .nav-container {
-    width: 100%; /* Full width for mobile */
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 999;
-    background-color: var(--page-bg-color-light);
-  }
-
-  /* Navigation Bar Dropdown for Mobile */
-  .dropdown-menu {
-    display: none;
+    width: 90%;
     flex-direction: column;
-    background-color: var(--page-bg-color-light);
-    position: absolute;
-    top: 50px;
-    right: 10px;
+  }
+
+  .profile-image-container {
+    text-align: center;
+  }
+
+  .profile-image {
     width: 150px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    z-index: 999;
-  }
-
-  /* Toggle Dropdown */
-  .menu-toggle {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-  }
-
-  .menu-toggle.active + .dropdown-menu {
-    display: flex; /* Show the dropdown when toggle is active */
-  }
-
-  .dropdown-menu a {
-    padding: 10px 15px;
-    text-align: center;
-    text-decoration: none;
-    color: var(--text-color-light);
-    transition: background-color 0.3s ease;
-  }
-
-  .dropdown-menu a:hover {
-    background-color: var(--hover-color);
-  }
-
-  /* About Title */
-  h1 {
-    font-size: 1.8rem;
-    text-align: center;
-    margin-top: 100px; /* Space below the navbar */
-  }
-
-  /* About Text */
-  .hire-me-text {
-    font-size: 0.9rem;
-    line-height: 1.6rem; /* Adjust line height for readability */
+    height: 150px;
     margin-bottom: 20px;
-    text-align: center; /* Center text for mobile */
-  }
-
-  /* Image and Profile Section */
-  .profile-picture-container {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
-  }
-
-  .profile-picture-container img {
-    width: 180px; /* Smaller profile picture for mobile */
-    height: auto;
+    object-fit: cover;
     border-radius: 50%;
   }
 
-  /* Social Links */
-  .social-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px; /* Space between links and other content */
-  }
-
-  .social-links a {
-    font-size: 1.2rem; /* Adjust link sizes for mobile */
-    margin: 0 10px;
-  }
-
-  /* Buttons */
-  .tab-button {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-    margin: 15px 5px;
-  }
-
-  /* CV Download Button */
-  .hire-me-container .tab-button.active {
-    margin-top: 10px;
-  }
-
-  /* Adjust container spacing */
-  .content-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  /* Footer */
-  footer {
-    text-align: center;
-    font-size: 0.8rem;
-    margin-top: 40px;
-  }
-}
-
-/* Base styles for mobile view */
-@media only screen and (max-width: 768px) {
-
-  /* Container and Body Styling */
-  .page-container {
-    padding: 20px;
-    width: 90%; /* Adjust container width */
-    box-sizing: border-box;
-  }
-
-  /* Header and Navbar */
-  nav.nav-container {
-    flex-direction: column;
-    align-items: center;
-    background-color: var(--page-bg-color-light);
-  }
-
-  nav.nav-container ul.tab-navigation {
-    display: none; /* Hide nav links for mobile */
-  }
-
-  nav.nav-container #theme-toggle {
-    position: relative;
-    left: 0;
-    top: 0;
-    margin-bottom: 10px;
-  }
-
-  nav.nav-container .hamburger-menu {
-    display: block;
-    cursor: pointer;
-    font-size: 24px;
-    padding: 10px;
-  }
-
-  nav.nav-container .dropdown-menu {
-    display: none;
-    background-color: var(--bg-color-light);
-    list-style-type: none;
-    padding: 10px;
-    border-radius: 8px;
-  }
-
-  nav.nav-container .dropdown-menu li {
-    padding: 10px 0;
-  }
-
-  nav.nav-container .dropdown-menu li a {
-    color: var(--text-color-light);
-    text-decoration: none;
-  }
-
-  /* About Section */
   .hire-me-title {
-    font-size: 1.8rem; /* Reduced size */
+    font-size: 1.8rem;
     text-align: center;
     margin-bottom: 10px;
   }
@@ -628,15 +508,6 @@ body.dark-mode .hero-image img:hover {
     text-align: justify;
   }
 
-  /* Profile Image */
-  .profile-image {
-    width: 180px; /* Reduce image size */
-    height: 180px;
-    border-radius: 50%;
-    margin: 0 auto 20px; /* Center align and add margin */
-  }
-
-  /* Button */
   .download-cv-button {
     padding: 10px 15px;
     font-size: 1rem;
@@ -645,37 +516,33 @@ body.dark-mode .hero-image img:hover {
     margin-top: 20px;
     text-align: center;
   }
-
-  /* Footer */
-  footer {
-    font-size: 0.8rem;
-    padding: 20px 0;
-    text-align: center;
-  }
-
-  /* Remove extra space at the bottom */
-  body {
-    margin-bottom: 0;
-  }
-
 }
 
-/* Hamburger Menu for Mobile */
-.hamburger-menu {
-  display: none; /* Default hidden */
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  left: 0;
 }
 
-/* For smaller devices */
-@media (max-width: 768px) {
-  .hamburger-menu {
-    display: block;
-  }
+.footer-line {
+  width: 100%;
+  height: 0.1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
 
-  .dropdown-menu {
-    display: block;
-  }
+.footer-content p {
+  font-size: 13px;
+  color: var(--text-color-light);
+}
 
-  nav.nav-container ul.tab-navigation {
-    display: none;
-  }
+body.dark-mode .footer-line {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .footer-content p {
+  color: var(--text-color-dark);
 }
