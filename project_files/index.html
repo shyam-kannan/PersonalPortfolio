@@ -1,22 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Shyam Kannan</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.min.js"></script>
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
-<body>
-
-  <!-- Main Container for the whole page -->
-  <div class="page-container">
-
-    <!-- Light/Dark Mode Toggle Button & Navigation -->
+@@ -18,8 +17,10 @@
     <header>
       <nav class="nav-container">
         <button id="theme-toggle" class="theme-toggle">🌙</button>
+        <div class="hamburger-menu">☰</div>
+        <ul class="tab-navigation">
         <!-- Hamburger menu button for mobile only -->
         <button id="menu-toggle" class="hamburger-menu">☰</button>
         <!-- Standard Nav Bar -->
@@ -24,32 +19,34 @@
           <li><a href="index.html" class="tab active">About</a></li>
           <li><a href="projects.html" class="tab">Projects</a></li>
           <li><a href="experience.html" class="tab">Experience</a></li>
-          <li><a href="skills.html" class="tab">Skills</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Main Content for About Section -->
-    <main class="content">
-      <section class="hero-section">
+@@ -34,36 +35,37 @@
         <div class="hero-content">
           <div class="hero-image">
             <img src="https://via.placeholder.com/300" alt="Shyam's Image" class="profile-img">
+            <!-- Social Links Section -->
+            <div class="social-links">
+              <a href="https://github.com/shyam-kannan" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/00ff88/github.png" alt="GitHub Icon"> Follow on GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/shyam-kannan-sde/" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/00ff88/linkedin.png" alt="LinkedIn Icon"> Follow on LinkedIn
+              </a>
+              <a href="mailto:shyamwork2000@gmail.com">
+                <img src="https://img.icons8.com/ios-filled/50/00ff88/email.png" alt="Email Icon"> shyamwork2000@gmail.com
+              </a>
+            </div>
           </div>
           <div class="hero-text">
             <h1 class="typewriter">Hello, I'm Shyam Kannan</h1>
             <p>
               My love for technology started with video games, especially car games like <em>Need for Speed</em>. The excitement of those virtual worlds sparked a curiosity in me that eventually led to coding. In high school, I built a version of <em>Minesweeper</em> as my first programming project. It may have been simple, but it was incredibly rewarding to see my code come to life.
             </p>
-
             <p>
               As I moved into college, I tackled more complex projects, including building a C++ compiler. Diving into the inner workings of programming languages opened my eyes to just how powerful code can be. That project pushed me to go deeper into areas like machine learning and cloud infrastructure.
             </p>
-
             <p>
               Now, whether it's refining algorithms, exploring cloud technologies, or building web applications, I’m always excited to take on new challenges in tech. Each project feels like leveling up in a game, driving me to improve and learn more.
             </p>
-
             <div class="hero-buttons">
               <a href="Shyam_Kannan_CV.pdf" class="download-cv-btn" download>Download CV</a>
             </div>
@@ -69,14 +66,3 @@
         </div>
       </section>
     </main>
-
-    <!-- Footer Section -->
-    <footer>
-      <hr class="footer-line">
-      <p>© 2024 Shyam Kannan. All rights reserved.</p>
-    </footer>
-    
-  </div>
-
-</body>
-</html>
