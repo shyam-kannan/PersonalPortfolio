@@ -5,59 +5,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Shyam Kannan</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="about.css">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.min.js"></script>
+  <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 </head>
 <body>
 
   <!-- Main Container for the whole page -->
   <div class="page-container">
 
-    <!-- Light/Dark Mode Toggle Button -->
+    <!-- Light/Dark Mode Toggle Button & Navigation -->
     <header>
-      <button id="theme-toggle" class="theme-toggle">🌙</button>
-
-      <!-- Navigation for larger screens -->
       <nav class="nav-container">
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
         <ul class="tab-navigation">
-          <li><a href="index.html" class="tab">About</a></li>
+          <li><a href="index.html" class="tab active">About</a></li>
           <li><a href="projects.html" class="tab">Projects</a></li>
           <li><a href="experience.html" class="tab">Experience</a></li>
           <li><a href="skills.html" class="tab">Skills</a></li>
         </ul>
       </nav>
-
-      <!-- Hamburger Menu for smaller screens -->
-      <div class="hamburger-menu" id="hamburger-menu">☰</div>
-
-      <!-- Dropdown Menu for small screens -->
-      <ul class="dropdown-menu" id="dropdown-menu">
-        <li><a href="index.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="experience.html">Experience</a></li>
-        <li><a href="skills.html">Skills</a></li>
-      </ul>
     </header>
 
     <!-- Main Content for About Section -->
     <main class="content">
-      <div class="content-container">
-        <!-- Profile Image -->
-        <div class="profile-image-container">
-          <img src="images/profile-placeholder.jpg" alt="Profile Picture" class="profile-image">
-        </div>
+      <section class="hero-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <!-- Typing effect will appear here -->
+            <h1 class="typewriter"></h1>
+            <p>
+              My love for technology started with video games, especially car games like <em>Need for Speed</em>. The excitement of those virtual worlds sparked a curiosity in me that eventually led to coding. In high school, I built a version of <em>Minesweeper</em> as my first programming project. It may have been simple, but it was incredibly rewarding to see my code come to life.
+            </p>
 
-        <!-- Title and Description -->
-        <div class="hire-me-container">
-          <h1 class="hire-me-title">Hello, I'm Shyam Kannan</h1>
-          <p class="hire-me-text">My love for technology started with video games, especially car games like Need for Speed. The excitement of those virtual worlds sparked a curiosity in me that eventually led to coding. In high school, I built a version of Minesweeper as my first programming project. It may have been simple, but it was incredibly rewarding to see my code come to life.</p>
-          <p class="hire-me-text">As I moved into college, I tackled more complex projects, including building a C++ compiler. Diving into the inner workings of programming languages opened my eyes to just how powerful code can be. That project pushed me to go deeper into areas like machine learning and cloud infrastructure.</p>
-          <p class="hire-me-text">Now, whether it's refining algorithms, exploring cloud technologies, or building web applications, I’m always excited to take on new challenges in tech. Each project feels like leveling up in a game, driving me to improve and learn more.</p>
-        </div>
+            <p>
+              As I moved into college, I tackled more complex projects, including building a C++ compiler. Diving into the inner workings of programming languages opened my eyes to just how powerful code can be. That project pushed me to go deeper into areas like machine learning and cloud infrastructure.
+            </p>
+              
+            <p>
+              Now, whether it's refining algorithms, exploring cloud technologies, or building web applications, I’m always excited to take on new challenges in tech. Each project feels like leveling up in a game, driving me to improve and learn more.
+            </p>
 
-        <!-- Download CV Button -->
-        <button class="download-cv-button">Download CV</button>
-      </div>
+            <div class="hero-buttons">
+              <a href="Shyam_Kannan_CV.pdf" class="download-cv-btn" download>Download CV</a>
+            </div>
+          </div>
+          <div class="hero-image">
+            <img src="https://via.placeholder.com/300" alt="Shyam's Image" class="profile-img">
+            <!-- Social Links Section -->
+            <div class="social-links">
+              <a href="https://github.com/shyam-kannan" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/00ff88/github.png" alt="GitHub Icon"> Follow on GitHub
+              </a>
+              <a href="https://www.linkedin.com/in/shyam-kannan-sde/" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/00ff88/linkedin.png" alt="LinkedIn Icon"> Follow on LinkedIn
+              </a>
+              <a href="mailto:shyamwork2000@gmail.com">
+                <img src="https://img.icons8.com/ios-filled/50/00ff88/email.png" alt="Email Icon"> shyamwork2000@gmail.com
+              </a>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+
+
+      
     </main>
 
     <!-- Footer Section -->
@@ -65,21 +80,9 @@
       <hr class="footer-line">
       <p>© 2024 Shyam Kannan. All rights reserved.</p>
     </footer>
-
+    
   </div>
 
-  <!-- JavaScript for Mobile Menu and Theme Toggle -->
-  <script>
-    document.getElementById('theme-toggle').addEventListener('click', function () {
-      document.body.classList.toggle('dark-mode');
-    });
-
-    const hamburgerMenu = document.getElementById('hamburger-menu');
-    const dropdownMenu = document.getElementById('dropdown-menu');
-
-    hamburgerMenu.addEventListener('click', function () {
-      dropdownMenu.classList.toggle('active');
-    });
-  </script>
 </body>
 </html>
+
