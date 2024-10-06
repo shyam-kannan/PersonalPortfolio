@@ -181,6 +181,14 @@ document.getElementById('education-tab').addEventListener('click', function() {
   document.getElementById('experience-tab').classList.remove('active');
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  const menuToggle = document.getElementById('menu-toggle');
+  const dropdownMenu = document.getElementById('dropdown-menu');
+
+  menuToggle.addEventListener('click', () => {
+    dropdownMenu.classList.toggle('hidden');
+  });
+});
 
 
 
