@@ -508,7 +508,7 @@ body.dark-mode .hero-image img:hover {
   }
 
   .hero-text, .hero-image {
-    width: 100%;
+    width: 60%;
     margin-bottom: 20px;
   }
 
