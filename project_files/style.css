@@ -450,6 +450,11 @@ body.dark-mode .hero-image img:hover {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    display: none;
+  }
+
+  .tab-navigation.show {
+    display: flex;
   }
 
   /* Show the hamburger button */
