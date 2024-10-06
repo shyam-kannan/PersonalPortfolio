@@ -428,6 +428,76 @@ body.dark-mode .hero-image img:hover {
   transition: transform 0.3s ease-in-out;
 }
 
+/* General mobile styles */
+@media (max-width: 768px) {
+  /* Adjust padding for the page container */
+  .page-container {
+    padding: 20px;
+  }
+
+  /* Make the text larger and more readable on smaller screens */
+  h1, h2, h3, p {
+    font-size: 90%; /* Scale down fonts */
+    line-height: 1.5; /* Increase spacing */
+  }
+
+  /* Adjust the navigation bar */
+  .tab-navigation {
+    flex-direction: column; /* Stack items vertically */
+    gap: 15px; /* Reduce gap between links */
+  }
+
+  /* Adjust buttons */
+  .tab-button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  /* Ensure images scale properly */
+  .timeline-circle img {
+    width: 80%; /* Smaller logo size */
+    height: 80%;
+  }
+
+  /* Adjust the experience timeline for smaller screens */
+  .timeline-item {
+    width: 100px; /* Make the timeline items smaller */
+  }
+
+  /* Adjust footer and copyright line */
+  footer {
+    font-size: 12px;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  /* Further reduce the container padding */
+  .page-container {
+    padding: 10px;
+  }
+
+  /* Scale down the font sizes even more */
+  h1, h2, h3, p {
+    font-size: 80%;
+  }
+
+  /* Stack the navigation bar vertically */
+  .tab-navigation {
+    gap: 10px;
+  }
+
+  /* Adjust the timeline items even more */
+  .timeline-item {
+    width: 80px;
+  }
+}
+
+
+
+
+
+
 
 
 
