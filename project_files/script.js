@@ -76,27 +76,30 @@ window.addEventListener('load', function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const text = "Hello, I'm Shyam Kannan";
-  let index = 0;
-  const speed = 100; // Typing speed in milliseconds
+  const typewriterText = "Hello, I'm Shyam Kannan";
 
-  // Ensure the text starts empty
-  document.querySelector(".typewriter").textContent = "";
+  function startTypingAnimation() {
+    const typewriterElement = document.querySelector('.typewriter');
+    typewriterElement.innerHTML = "";  // Clear out the current text
 
-  function typeWriter() {
-    if (index < text.length) {
-      document.querySelector(".typewriter").innerHTML += text.charAt(index);
-      index++;
-      setTimeout(typeWriter, speed);
-    } else {
-      // After the typing is done, remove the cursor after a delay
-      setTimeout(() => {
-        document.querySelector(".typewriter").classList.add("cursor-hidden");
-      }, 1000); // Adjust delay for how long you want the cursor to stay after typing
+    let i = 0;
+    const typingSpeed = window.innerWidth < 768 ? 100 : 75;  // Slow down typing speed for mobile devices
+
+    function typeWriter() {
+      if (i < typewriterText.length) {
+        typewriterElement.innerHTML += typewriterText.charAt(i);
+        i++;
+        setTimeout(typeWriter, typingSpeed);
+      }
     }
+    typeWriter();
   }
 
-  typeWriter(); // Start the typing effect
+  startTypingAnimation();
+
+  window.addEventListener('resize', () => {
+    startTypingAnimation();  // Restart the typing animation when the screen resizes
+  });
 });
 
 document.addEventListener('DOMContentLoaded', function () {
