@@ -549,107 +549,87 @@ body.dark-mode .hero-image img:hover {
   }
 }
 
-/* General styles remain the same */
-
-/* Global Styles */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg-color-light);
-  color: var(--text-color-light);
-}
-
-/* Media Queries for Responsiveness */
+/* General Mobile Styles */
 @media (max-width: 768px) {
-  .nav-container ul {
-    font-size: 0.9rem; /* Smaller font for nav */
-    padding: 0; /* Remove extra padding */
+  /* Body */
+  body {
+    font-size: 0.9rem; /* Smaller font size */
+    padding: 0 10px; /* Add small padding for better view on mobile */
   }
 
-  .nav-container {
-    flex-direction: column; /* Stack the navigation vertically on mobile */
-  }
-
+  /* Page Container */
   .page-container {
-    width: 95%; /* Take most of the mobile screen width */
-    padding: 20px; /* Reduce padding */
+    padding: 20px; /* Smaller padding */
+    max-width: 100%; /* Ensure full width usage */
+    width: 100%;
   }
 
-  h1 {
-    font-size: 1.8rem; /* Scale down heading */
+  /* Navigation */
+  .nav-container {
+    padding-top: 30px; /* Reduce padding on top */
   }
 
-  p {
-    font-size: 1rem; /* Scale down paragraph text */
+  .tab-navigation .tab {
+    font-size: 0.8rem; /* Smaller font for nav links */
+    padding: 8px 12px; /* Smaller padding */
   }
 
-  .timeline-container {
-    padding: 20px 0; /* Reduce padding for timeline */
-  }
-
-  .timeline-circle {
-    width: 40px;
-    height: 40px; /* Reduce circle size */
-  }
-
-  .hire-me-container {
-    margin-top: 20px;
+  /* Header Styling */
+  h1, h2, h3, p {
+    font-size: 1rem; /* Reduce header font sizes */
+    line-height: 1.2; /* Adjust line height for tighter spacing */
   }
 
   .hire-me-title {
-    font-size: 1.8rem; /* Smaller title */
+    font-size: 2rem; /* Smaller title */
   }
 
+  .hire-me-text {
+    font-size: 1rem; /* Adjust text size */
+  }
+
+  /* Buttons styling */
   .tab-button {
-    font-size: 0.8rem;
-    padding: 8px 16px;
+    padding: 8px 16px; /* Smaller padding */
+    font-size: 0.8rem; /* Reduce font size */
   }
 
-  .social-links {
-    flex-direction: row; /* Ensure social links stack properly */
+  /* Picture container and scaling */
+  .profile-picture {
+    max-width: 100px; /* Adjust image container */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Adjust margin */
   }
 
-  .content-container img {
-    width: 100px;
-    height: 100px; /* Adjust image size */
+  .social-links a {
+    font-size: 0.8rem; /* Smaller link size */
+    padding: 6px; /* Adjust padding */
   }
 
-  footer {
-    font-size: 0.8rem; /* Reduce footer font size */
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.4rem; /* Even smaller heading for small screens */
+  /* Horizontal Timeline */
+  .timeline-container {
+    padding: 20px 0; /* Reduced padding */
   }
 
-  p {
-    font-size: 0.9rem; /* Smaller paragraph text */
-  }
-
-  .nav-container ul {
-    font-size: 0.8rem; /* Smaller nav text */
-  }
-
-  .tab-navigation {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 0.7rem; /* Smallest font size for mobile */
-  }
-
-  .timeline-circle {
-    width: 35px;
-    height: 35px; /* Further reduce circle size */
+  .timeline-item .timeline-circle {
+    width: 40px; /* Shrink circles */
+    height: 40px;
   }
 
   .timeline-description h3 {
-    font-size: 1rem;
+    font-size: 0.9rem; /* Smaller company name font */
   }
 
   .timeline-description p {
-    font-size: 0.8rem; /* Make the description text readable on small screens */
+    font-size: 0.8rem; /* Smaller role font */
+  }
+
+  /* Footer */
+  footer {
+    padding: 10px 0;
+  }
+
+  .footer-content p {
+    font-size: 0.8rem; /* Smaller footer text */
   }
 }
