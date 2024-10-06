@@ -553,75 +553,88 @@ body.dark-mode .hero-image img:hover {
 @media (max-width: 768px) {
   /* Body */
   body {
-    font-size: 0.9rem; /* Smaller font size */
-    padding: 0 10px; /* Add small padding for better view on mobile */
+    font-size: 0.85rem; /* Reduce font size */
+    padding: 0 5px; /* Minimize padding */
   }
 
   /* Page Container */
   .page-container {
-    padding: 20px; /* Smaller padding */
+    padding: 15px; /* Minimize padding */
     max-width: 100%; /* Ensure full width usage */
     width: 100%;
   }
 
   /* Navigation */
   .nav-container {
-    padding-top: 30px; /* Reduce padding on top */
+    padding-top: 20px; /* Reduce padding */
   }
 
   .tab-navigation .tab {
-    font-size: 0.8rem; /* Smaller font for nav links */
-    padding: 8px 12px; /* Smaller padding */
+    font-size: 0.7rem; /* Smaller font for nav links */
+    padding: 6px 8px; /* Minimize padding */
   }
 
   /* Header Styling */
   h1, h2, h3, p {
-    font-size: 1rem; /* Reduce header font sizes */
-    line-height: 1.2; /* Adjust line height for tighter spacing */
+    font-size: 0.95rem; /* Further reduce header font sizes */
+    line-height: 1.1; /* Adjust line height */
+    margin-bottom: 5px; /* Reduce margin between elements */
   }
 
   .hire-me-title {
-    font-size: 2rem; /* Smaller title */
+    font-size: 1.6rem; /* Smaller title */
+    margin-bottom: 8px; /* Reduce space below the title */
   }
 
   .hire-me-text {
-    font-size: 1rem; /* Adjust text size */
+    font-size: 0.85rem; /* Adjust text size */
+    margin-bottom: 10px; /* Reduce margin */
   }
 
   /* Buttons styling */
   .tab-button {
-    padding: 8px 16px; /* Smaller padding */
-    font-size: 0.8rem; /* Reduce font size */
+    padding: 6px 10px; /* Smaller padding */
+    font-size: 0.7rem; /* Reduce font size */
+    margin-bottom: 10px; /* Reduce margin between buttons */
   }
 
   /* Picture container and scaling */
   .profile-picture {
-    max-width: 100px; /* Adjust image container */
+    max-width: 80px; /* Reduce image size */
     height: auto; /* Maintain aspect ratio */
-    margin-bottom: 20px; /* Adjust margin */
+    margin-bottom: 10px; /* Reduce margin */
+  }
+
+  /* Social Links */
+  .social-links {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Reduce space between links */
   }
 
   .social-links a {
-    font-size: 0.8rem; /* Smaller link size */
-    padding: 6px; /* Adjust padding */
+    font-size: 0.7rem; /* Smaller link size */
+    padding: 4px; /* Adjust padding */
+    margin-right: 5px; /* Reduce space between icons */
   }
 
   /* Horizontal Timeline */
   .timeline-container {
-    padding: 20px 0; /* Reduced padding */
+    padding: 15px 0; /* Reduce padding */
+    margin-top: -30px; /* Adjust margin to avoid excess space */
   }
 
   .timeline-item .timeline-circle {
-    width: 40px; /* Shrink circles */
-    height: 40px;
+    width: 35px; /* Shrink circles */
+    height: 35px;
   }
 
   .timeline-description h3 {
-    font-size: 0.9rem; /* Smaller company name font */
+    font-size: 0.85rem; /* Smaller company name font */
   }
 
   .timeline-description p {
-    font-size: 0.8rem; /* Smaller role font */
+    font-size: 0.7rem; /* Smaller role font */
   }
 
   /* Footer */
@@ -630,6 +643,11 @@ body.dark-mode .hero-image img:hover {
   }
 
   .footer-content p {
-    font-size: 0.8rem; /* Smaller footer text */
+    font-size: 0.7rem; /* Smaller footer text */
+  }
+
+  /* Reduce space between sections */
+  .content-container, .hire-me-container {
+    margin-bottom: 5px; /* Minimize margin between sections */
   }
 }
