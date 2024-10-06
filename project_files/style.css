@@ -510,8 +510,8 @@ body.dark-mode .hero-image img:hover {
   }
 
   .hero-text, .hero-image {
-    max-width: auto;
-    max-height: auto;
+    max-width: 50%;
+    max-height: 50%;
     margin-bottom: 20px;
   }
 
@@ -529,8 +529,8 @@ body.dark-mode .hero-image img:hover {
   }
 
   .social-links {
-    max-width: auto;
-    max-height: auto;    
+    max-width: 50%;
+    max-height: 50%;    
     display: flex;
     flex-direction: column;
     align-items: center;
