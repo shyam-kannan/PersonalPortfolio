@@ -434,38 +434,92 @@ body.dark-mode .hero-image img:hover {
   body {
     overflow-x: hidden;
     padding: 0 10px; /* Add padding for mobile responsiveness */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
+  /* Page Container */
   .page-container {
     padding: 20px;
+    width: 100%; /* Full width for mobile */
     max-width: 100%;
-    width: 100%;
+  }
+
+  /* Navigation Bar */
+  .nav-container {
+    width: 100%; /* Full width for mobile */
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: var(--page-bg-color-light);
+  }
+
+  /* Navigation Bar Dropdown for Mobile */
+  .dropdown-menu {
+    display: none;
+    flex-direction: column;
+    background-color: var(--page-bg-color-light);
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    width: 150px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  /* Toggle Dropdown */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+  }
+
+  .menu-toggle.active + .dropdown-menu {
+    display: flex; /* Show the dropdown when toggle is active */
+  }
+
+  .dropdown-menu a {
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-color-light);
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown-menu a:hover {
+    background-color: var(--hover-color);
   }
 
   /* About Title */
   h1 {
-    font-size: 1rem; /* Reduced font size for mobile */
+    font-size: 1.8rem;
     text-align: center;
-    margin-bottom: 10px; /* Add space below the title */
+    margin-top: 100px; /* Space below the navbar */
   }
 
   /* About Text */
   .hire-me-text {
-    font-size: 0.5rem; /* Reduced font size */
-    line-height: 1.4rem; /* Adjust line height for readability */
-    margin: 0 0 15px; /* Add margin to prevent text from touching the edges */
-    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.6rem; /* Adjust line height for readability */
+    margin-bottom: 20px;
+    text-align: center; /* Center text for mobile */
   }
 
-  /* Image Container */
+  /* Image and Profile Section */
   .profile-picture-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px; /* Space between the image and text */
+    margin-bottom: 20px;
   }
 
   .profile-picture-container img {
-    width: 120px; /* Reduce image size */
+    width: 180px; /* Smaller profile picture for mobile */
     height: auto;
     border-radius: 50%;
   }
@@ -474,19 +528,19 @@ body.dark-mode .hero-image img:hover {
   .social-links {
     display: flex;
     justify-content: center;
-    margin-bottom: 5px; /* Reduced margin for spacing */
+    margin-bottom: 20px; /* Space between links and other content */
   }
 
   .social-links a {
-    font-size: 0.5rem; /* Reduced link size */
-    margin: 0 6px; /* Smaller gap between links */
+    font-size: 1.2rem; /* Adjust link sizes for mobile */
+    margin: 0 10px;
   }
 
   /* Buttons */
   .tab-button {
-    padding: 8px 14px; /* Reduced padding for buttons */
-    font-size: 0.7rem; /* Reduced font size */
-    margin: 10px 5px; /* Adjust spacing between buttons */
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    margin: 15px 5px;
   }
 
   /* CV Download Button */
@@ -494,22 +548,64 @@ body.dark-mode .hero-image img:hover {
     margin-top: 10px;
   }
 
-  /* Adjust spacing between elements */
-  .hire-me-container {
-    margin-bottom: 10px; /* Space between sections */
-  }
-
+  /* Adjust container spacing */
   .content-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
   }
 
   /* Footer */
   footer {
     text-align: center;
-    font-size: 0.8rem; /* Reduce footer text size */
-    margin-top: 20px;
+    font-size: 0.8rem;
+    margin-top: 40px;
+  }
+}
+
+/* iPad or Tablet Styles */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+  body {
+    padding: 0 20px;
+  }
+
+  .page-container {
+    padding: 30px;
+    width: 100%; /* Make the container fit better on tablets */
+  }
+
+  .nav-container {
+    padding: 15px;
+  }
+
+  /* About Title */
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-top: 80px;
+  }
+
+  /* About Text */
+  .hire-me-text {
+    font-size: 1.1rem;
+    line-height: 1.8rem;
+    text-align: center;
+  }
+
+  /* Profile Picture */
+  .profile-picture-container img {
+    width: 220px;
+  }
+
+  /* Social Links */
+  .social-links a {
+    font-size: 1.3rem;
+    margin: 0 12px;
+  }
+
+  /* Footer */
+  footer {
+    font-size: 0.9rem;
+    margin-top: 50px;
   }
 }
