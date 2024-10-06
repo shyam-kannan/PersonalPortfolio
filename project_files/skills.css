@@ -1,0 +1,423 @@
+/* Root Variables for Theme */
+:root {
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #000000;
+  --page-bg-color-light: #ffffff;
+  --page-bg-color-dark: #1a1a1a;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --hover-color: #00cc77;
+  --icon-light-color: #000000;
+  --icon-dark-color: #ffffff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* General body styling */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Page Container */
+.page-container {
+  background-color: var(--page-bg-color-light);
+  padding: 60px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.1s ease, color 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  min-height: 100vh; /* Ensures full page height */
+}
+
+body.dark-mode .page-container {
+  background-color: var(--page-bg-color-dark);
+}
+
+/* Light/Dark Mode Button */
+#theme-toggle {
+  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Default border color */
+  background-color: #fff; /* Light mode default background */
+  color: #00cc77; /* Icon color in light mode */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+  position: absolute; /* Absolute positioning */
+  left: -240px; /* Adjust this value to move it further left */
+  top: 75%; /* Vertically center within nav bar */
+  transform: translateY(-50%); /* Center the button vertically */
+}
+
+body.dark-mode #theme-toggle {
+  background-color: #1a1a1a; /* Dark mode background */
+  color: #ccc; /* Icon color in dark mode */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Dark mode border */
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1); /* Light shadow for dark mode */
+}
+
+/* Hover Effect for Toggle Button */
+#theme-toggle:hover {
+  background-color: #f0f0f0; /* Slight change for hover in light mode */
+  box-shadow: 0px 6px 20px rgba(0, 255, 136, 0.3); /* Hover shadow */
+}
+
+body.dark-mode #theme-toggle:hover {
+  background-color: #333; /* Slight change for hover in dark mode */
+  box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2); /* Hover shadow for dark mode */
+}
+
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Relative positioning for absolute elements inside */
+  width: 100%;
+  padding-top: 60px;
+  z-index: 999;
+  background-color: var(--page-bg-color-light);
+  transition: background-color 0.1s ease;
+}
+
+body.dark-mode .nav-container {
+  background-color: var(--page-bg-color-dark);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  background-color: var(--page-bg-color-light);
+  padding: 10px 30px;
+  border-radius: 20px;
+
+  /* Adding a border and shadow */
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Light mode border */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow for emphasis */
+  transition: background-color 0.1s ease, box-shadow 0.1s ease, border 0.1s ease;
+}
+
+body.dark-mode .tab-navigation {
+  background-color: var(--page-bg-color-dark);
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Dark mode border */
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.15); /* Stronger shadow in dark mode */
+}
+
+/* Tab Links */
+.tab-navigation .tab {
+  text-decoration: none;
+  color: var(--text-color-light);
+  padding: 10px 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+body.dark-mode .tab-navigation .tab {
+  color: var(--text-color-dark);
+}
+
+.tab-navigation .tab:hover {
+  background-color: transparent;
+  color: var(--hover-color); /* Only change the text color */
+}
+
+body.dark-mode .tab-navigation .tab:hover {
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+.tab-navigation .tab.active {
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+body.dark-mode .tab-navigation .tab.active {
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+/* Title and Description Alignment */
+.skills-title-container {
+  width: 100%;
+  text-align: left;
+  padding-left: 20px;
+}
+
+.skills-header {
+  font-size: 3.0rem;
+  font-weight: 700;
+  margin-top: 0;  /* Remove margin */
+  color: var(--text-color-light);
+  position: relative;
+}
+
+body.dark-mode .skills-header {
+  color: var(--text-color-dark);
+}
+
+.skills-description {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  text-align: left;
+  margin-bottom: 1.5rem;  /* Adjust space between text and buttons */
+  top: -20px;  /* Move this value up as needed */
+  color: var(--text-color-light);
+}
+
+body.dark-mode .skills-description {
+  color: var(--text-color-dark);
+}
+
+/* Skills and Certifications Layout */
+.skills-certifications-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+/* Skills Categories Styling */
+.skills-categories-container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 60%;
+}
+
+.skills-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-category-header {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .skills-category-header {
+  color: var(--text-color-dark);
+}
+
+.skills-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.skills-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.skills-card img {
+  width: 50px;
+  height: 50px;
+}
+
+.skills-card p {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .skills-card p {
+  color: var(--text-color-dark);
+}
+
+/* Hover Effect for Skills Cards */
+.skills-card:hover {
+  transform: scale(1.1);
+}
+
+/* Skills and Certifications Layout */
+.skills-certifications-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 30px; /* Space between sections */
+  flex-wrap: wrap; /* Make sure it wraps on smaller screens */
+}
+
+/* Separator Line Between Skills and Certifications */
+.skills-certifications-separator {
+  width: 1px;
+  background-color: rgba(0, 0, 0, 0.1); /* Light mode line color */
+  min-height: 100%; /* Set the height based on the tallest section */
+  align-self: stretch; /* Make sure it stretches across both sections */
+}
+
+body.dark-mode .skills-certifications-separator {
+  background-color: rgba(255, 255, 255, 0.2); /* Dark mode line color */
+}
+
+/* Updated layout for certifications to align properly */
+.certifications-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex: 1; /* Ensure the section scales with content */
+}
+
+.certifications-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.certification-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.certifications-header {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .certifications-header {
+  color: var(--text-color-dark);
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  .skills-certifications-layout {
+    flex-direction: column; /* Stacks the sections vertically on smaller screens */
+    align-items: flex-start;
+  }
+
+  .skills-certifications-separator {
+    width: 100%; /* Make the separator horizontal for smaller screens */
+    height: 1px;
+  }
+}
+
+/* Aesthetics */
+.skills-card, .certification-item {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skills-card:hover, .certification-item:hover {
+  transform: scale(1.1);
+}
+
+.skills-card:hover img, .certification-item:hover img {
+  filter: drop-shadow(0px 0px 10px rgba(0, 255, 136, 0.6));
+}
+@keyframes bounce {
+  0%, 100% {
+     transform: translateY(0);
+  }
+  50% {
+     transform: translateY(-10px);
+  }
+}
+
+.skills-card img, .certification-item img {
+  transition: transform 0.3s ease;
+}
+
+.skills-card img:hover, .certification-item img:hover {
+  animation: bounce 1s infinite;
+}
+
+
+/* Footer */
+footer {
+  padding: 10px 0;
+  text-align: center;
+}
+
+.footer-line {
+  width: 113.3%;
+  height: 0.1px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .footer-line {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.footer-content p {
+  font-size: 13px;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .footer-content p {
+  color: var(--text-color-dark);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky; /* Ensure footer stays at the bottom */
+  bottom: 0;
+  left: 0;
+}
+
+.footer-line {
+  width: 113.3%;
+  margin-left: -60px;
+  max-width: 1500px;
+  height: 0.1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.footer-content p {
+  font-size: 13px;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .footer-line {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .footer-content p {
+  color: var(--text-color-dark);
+}

@@ -1,0 +1,435 @@
+:root {
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #000000;
+  --page-bg-color-light: #ffffff;
+  --page-bg-color-dark: #1a1a1a;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --hover-color: #00cc77;
+  --icon-light-color: #000000;
+  --icon-dark-color: #ffffff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* General body styling */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevent scrolling */
+}
+
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Page Container */
+.page-container {
+  background-color: var(--page-bg-color-light);
+  padding: 60px; /* Adjusted padding */
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.1s ease, color 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh; /* Ensures full page height */
+}
+
+body.dark-mode .page-container {
+  background-color: var(--page-bg-color-dark);
+}
+
+/* Light/Dark Mode Button */
+#theme-toggle {
+  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Default border color */
+  background-color: #fff; /* Light mode default background */
+  color: #00cc77; /* Icon color in light mode */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+  position: absolute; /* Absolute positioning */
+  left: -240px; /* Adjust this value to move it further left */
+  top: 75%; /* Vertically center within nav bar */
+  transform: translateY(-50%); /* Center the button vertically */
+}
+
+body.dark-mode #theme-toggle {
+  background-color: #1a1a1a; /* Dark mode background */
+  color: #ccc; /* Icon color in dark mode */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Dark mode border */
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1); /* Light shadow for dark mode */
+}
+
+/* Hover Effect for Toggle Button */
+#theme-toggle:hover {
+  background-color: #f0f0f0; /* Slight change for hover in light mode */
+  box-shadow: 0px 6px 20px rgba(0, 255, 136, 0.3); /* Hover shadow */
+}
+
+body.dark-mode #theme-toggle:hover {
+  background-color: #333; /* Slight change for hover in dark mode */
+  box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2); /* Hover shadow for dark mode */
+}
+
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Relative positioning for absolute elements inside */
+  width: 100%;
+  padding-top: 60px;
+  z-index: 999;
+  background-color: var(--page-bg-color-light);
+  transition: background-color 0.1s ease;
+  
+}
+
+body.dark-mode .nav-container {
+  background-color: var(--page-bg-color-dark);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  background-color: var(--page-bg-color-light);
+  padding: 10px 30px;
+  border-radius: 20px;
+
+  /* Adding a border and shadow */
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Light mode border */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow for emphasis */
+  transition: background-color 0.1s ease, box-shadow 0.1s ease, border 0.1s ease;
+}
+
+body.dark-mode .tab-navigation {
+  background-color: var(--page-bg-color-dark);
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Dark mode border */
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.15); /* Stronger shadow in dark mode */
+}
+
+/* Tab Links */
+.tab-navigation .tab {
+  text-decoration: none;
+  color: var(--text-color-light);
+  padding: 10px 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+body.dark-mode .tab-navigation .tab {
+  color: var(--text-color-dark);
+}
+
+.tab-navigation .tab:hover {
+  background-color: transparent;
+  color: var(--hover-color); /* Only change the text color */
+}
+
+body.dark-mode .tab-navigation .tab:hover {
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+.tab-navigation .tab.active {
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+body.dark-mode .tab-navigation .tab.active{
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 80px 0; /* Padding */
+  width: 100%;
+  max-width: 1000px;
+  flex-grow: 1;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: row-reverse; /* This flips the content */
+  justify-content: space-between;
+  gap: 50px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.hero-text {
+  max-width: 450px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--text-color-light);
+  font-weight: 300;
+  padding-left: 60px;
+}
+
+body.dark-mode .hero-text {
+  color: var(--text-color-dark);
+}
+
+.hero-text h1 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .hero-text h1 {
+  color: var(--text-color-dark);
+}
+
+.hero-text p {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+/* Image section */
+.hero-image {
+  flex: 0.4;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin-top: 20px;
+  margin-left: -50px;
+}
+
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Social links */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--text-color-light); /* Default text color */
+  transition: color 0.3s ease; /* Smooth hover transition */
+}
+
+body.dark-mode .social-links a {
+  color: var(--text-color-dark); /* Text color in dark mode */
+}
+
+/* Hover effects for links (consistent across light and dark modes) */
+.social-links a:hover {
+  color: var(--hover-color); /* Green hover effect */
+}
+
+body.dark-mode .social-links a:hover {
+  color: var(--hover-color); /* Text color in dark mode */
+}
+
+/* Image styling without hover effect */
+.social-links a img {
+  width: 25px;
+  height: 25px;
+  margin-right: 8px;
+  filter: grayscale(100%);
+  background-color: #050606;
+  transition: none; /* No transition or hover effect for images */
+}
+
+body.dark-mode .social-links a img {
+  filter: grayscale(100%);
+  background-color: #050606;
+}
+
+/* Remove hover effect from images */
+.social-links a img:hover {
+  filter: grayscale(100%); /* Ensure no hover effect */
+}
+
+
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky;
+  bottom: 0;
+  left: 0;
+}
+
+.footer-line {
+  width: 113.3%;
+  margin-left: -60px;
+  max-width: 1500px;
+  height: 0.1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.footer-content p {
+  font-size: 13px;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .footer-line {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .footer-content p {
+  color: var(--text-color-dark);
+}
+
+/* Buttons and social links */
+.hero-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.download-cv-btn {
+  background-color: var(--text-color-light);
+  color: var(--text-color-dark);
+  padding: 10px 24px;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-cv-btn:hover {
+  background-color: var(--hover-color);
+  color: #fff;
+  box-shadow: 0px 8px 20px rgba(0, 255, 136, 0.4);
+}
+
+body.dark-mode .download-cv-btn {
+  background-color: var(--text-color-dark);
+  color: var(--text-color-light);
+}
+
+/* Typing effect style */
+.typewriter {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-color-light);
+  border-right: 3px solid var(--text-color-light);
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: fit-content;
+  animation: blink 0.7s step-end infinite;
+}
+
+body.dark-mode .typewriter {
+  color: var(--text-color-dark);
+  border-right: 3px solid var(--text-color-dark);
+}
+
+/* Blinking cursor effect */
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/* Hide the cursor */
+.cursor-hidden {
+  border-right: none;
+  animation: none;
+}
+
+body.dark-mode .cursor-hidden {
+  border-right: none;
+  animation: none;
+}
+
+
+/* Aesthetics */
+/* Gradient Background for light mode */
+body {
+  background: linear-gradient(120deg, #f0f0f0, #ffffff);
+}
+
+body.dark-mode {
+  background: linear-gradient(120deg, #1a1a1a, #000000);
+}
+
+
+.download-cv-btn:hover {
+  background-color: #00ff88; /* Brighter green on hover */
+  box-shadow: 0px 8px 20px rgba(0, 255, 136, 0.3); /* Stronger shadow */
+}
+
+/* Glowing effect on profile picture */
+.hero-image img {
+  border: 3px solid transparent;
+  box-shadow: 0px 0px 20px rgba(7, 7, 7, 0.3);
+}
+
+.hero-image img:hover {
+  box-shadow: 0px 0px 30px rgba(10, 10, 10, 0.5);
+}
+
+body.dark-mode .hero.hero-image img {
+  border: 3px solid transparent;
+  box-shadow: 0px 0px 20px rgba(255, 251, 251, 0.3);
+}
+
+body.dark-mode .hero-image img:hover {
+  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
+}
+
+.hero-image img:hover {
+  transform: rotate(5deg); /* Tilts the image slightly */
+  transition: transform 0.3s ease-in-out;
+}
+
+
+
+
+
+

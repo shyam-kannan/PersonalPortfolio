@@ -1,0 +1,464 @@
+:root {
+  --bg-color-light: #ffffff;
+  --bg-color-dark: #000000;
+  --page-bg-color-light: #ffffff;
+  --page-bg-color-dark: #1a1a1a;
+  --text-color-light: #000000;
+  --text-color-dark: #ffffff;
+  --hover-color: #00cc77;
+  --icon-light-color: #000000;
+  --icon-dark-color: #ffffff;
+  --font-family: 'Poppins', sans-serif;
+}
+
+/* General body styling */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Prevents scrolling */
+}
+
+body {
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+body.dark-mode {
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+}
+
+/* Page Container */
+.page-container {
+  background-color: var(--page-bg-color-light);
+  padding: 60px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.1s ease, color 0.1s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  flex-grow: 1;
+  min-height: 100vh; /* Ensures full page height */
+}
+
+body.dark-mode .page-container {
+  background-color: var(--page-bg-color-dark);
+}
+
+/* Light/Dark Mode Button */
+#theme-toggle {
+  font-size: 24px;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Default border color */
+  background-color: #fff; /* Light mode default background */
+  color: #00cc77; /* Icon color in light mode */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1); /* Light shadow */
+  position: absolute; /* Absolute positioning */
+  left: -240px; /* Adjust this value to move it further left */
+  top: 75%; /* Vertically center within nav bar */
+  transform: translateY(-50%); /* Center the button vertically */
+}
+
+body.dark-mode #theme-toggle {
+  background-color: #1a1a1a; /* Dark mode background */
+  color: #ccc; /* Icon color in dark mode */
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Dark mode border */
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1); /* Light shadow for dark mode */
+}
+
+/* Hover Effect for Toggle Button */
+#theme-toggle:hover {
+  background-color: #f0f0f0; /* Slight change for hover in light mode */
+  box-shadow: 0px 6px 20px rgba(0, 255, 136, 0.3); /* Hover shadow */
+}
+
+body.dark-mode #theme-toggle:hover {
+  background-color: #333; /* Slight change for hover in dark mode */
+  box-shadow: 0px 6px 20px rgba(255, 255, 255, 0.2); /* Hover shadow for dark mode */
+}
+
+/* Navigation Container */
+.nav-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Relative positioning for absolute elements inside */
+  width: 100%;
+  padding-top: 60px;
+  z-index: 999;
+  background-color: var(--page-bg-color-light);
+  transition: background-color 0.1s ease;
+  
+}
+
+body.dark-mode .nav-container {
+  background-color: var(--page-bg-color-dark);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  background-color: var(--page-bg-color-light);
+  padding: 10px 30px;
+  border-radius: 20px;
+
+  /* Adding a border and shadow */
+  border: 2px solid rgba(0, 0, 0, 0.2); /* Light mode border */
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.15); /* Stronger shadow for emphasis */
+  transition: background-color 0.1s ease, box-shadow 0.1s ease, border 0.1s ease;
+}
+
+body.dark-mode .tab-navigation {
+  background-color: var(--page-bg-color-dark);
+  border: 2px solid rgba(255, 255, 255, 0.2); /* Dark mode border */
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.15); /* Stronger shadow in dark mode */
+}
+
+/* Tab Links */
+.tab-navigation .tab {
+  text-decoration: none;
+  color: var(--text-color-light);
+  padding: 10px 15px;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: color 0.1s ease, background-color 0.1s ease;
+}
+
+body.dark-mode .tab-navigation .tab {
+  color: var(--text-color-dark);
+}
+
+.tab-navigation .tab:hover {
+  background-color: transparent;
+  color: var(--hover-color); /* Only change the text color */
+}
+
+body.dark-mode .tab-navigation .tab:hover {
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+.tab-navigation .tab.active {
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+body.dark-mode .tab-navigation .tab.active{
+  color: var(--hover-color); /* Only change the text color */
+  background-color: transparent;
+}
+
+/* Projects Section */
+.projects-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 0; /* Added padding to center the content */
+  width: 100%;
+  max-width: 1000px;
+  gap: 50px;
+  flex-grow: 1; /* Ensures project section stretches */
+}
+
+.project-text {
+  max-width: 450px;
+  text-align: left;
+  line-height: 1.6;
+  font-size: 1.2rem;
+  color: var(--text-color-light);
+  font-weight: 300;
+}
+
+body.dark-mode .project-text {
+  color: var(--text-color-dark);
+}
+
+.project-text h3 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .project-text h3 {
+  color: var(--text-color-dark);
+}
+
+.project-text p {
+  font-size: 14px;
+  margin-top: 15px;
+  font-weight: 400;
+}
+
+.project-tech {
+  font-size: 14px;
+  margin-top: 10px;
+  color: var(black);
+}
+
+body.dark-mode .project-tech {
+  color: var(white);
+}
+
+
+/* Image section */
+.project-image {
+  width: 600px;
+  height: 400px;
+  border-radius: 20px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .project-image {
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+}
+
+/* GitHub button styling */
+.project-buttons {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.github-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: var(--text-color-light);
+  transition: color 0.2s ease;
+}
+
+body.dark-mode .github-icon {
+  color: var(--text-color-dark);
+}
+
+.github-icon img {
+  width: 25px;
+  height: 25px;
+  filter: grayscale(100%);
+  transition: filter 0.2s ease;
+}
+
+body.dark-mode .github-icon img {
+  filter: brightness(0) invert(1); /* Adjust for dark mode */
+}
+
+.github-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .github-text {
+  color: var(--text-color-dark);
+}
+
+.github-icon:hover img {
+  filter: none;
+}
+
+.github-icon:hover .github-text {
+  color: var(--hover-color);
+}
+
+/* Arrow Buttons using FontAwesome */
+.arrow-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding-top: 20px;
+}
+
+.arrow-button {
+  background-color: black;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  color: #fff; /* FontAwesome icon color */
+}
+
+body.dark-mode .arrow-button {
+  background-color: white;
+  color: black;
+}
+
+.arrow-button:hover {
+  transform: scale(1.1);
+}
+
+.arrow-button i {
+  font-size: 20px;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 10px 0;
+  width: 100%;
+  position: sticky; /* Ensure footer stays at the bottom */
+  bottom: 0;
+  left: 0;
+}
+
+.footer-line {
+  width: 113.3%;
+  margin-left: -60px;
+  max-width: 1500px;
+  height: 0.1px;
+  background-color: rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.footer-content p {
+  font-size: 13px;
+  color: var(--text-color-light);
+}
+
+body.dark-mode .footer-line {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+body.dark-mode .footer-content p {
+  color: var(--text-color-dark);
+}
+
+.projects-section {
+  display: none; /* Hide all projects by default */
+}
+
+.projects-section.active {
+  display: flex; /* Show the active project */
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Gradient Background for light mode */
+body {
+  background: linear-gradient(120deg, #f0f0f0, #ffffff);
+}
+
+body.dark-mode {
+  background: linear-gradient(120deg, #1a1a1a, #000000);
+}
+
+/* Hover effect for project image */
+.project-image:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 12px 40px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .project-image:hover {
+  box-shadow: 0px 12px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Style for progress dots */
+.progress-dots {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #ddd;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.dot.active {
+  background-color: var(--hover-color);
+}
+
+body.dark-mode .dot {
+  background-color: #444;
+}
+
+body.dark-mode .dot.active {
+  background-color: #00ff88;
+}
+
+/* Sliding animation between projects */
+@keyframes slideProject {
+  from {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.projects-section.active {
+  animation: slideProject 0.5s ease-in-out;
+}
+
+/* New Intro Section Styles */
+.intro-section {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px; /* Space between the intro section and the project */
+
+}
+
+.intro-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--text-color-light);
+  margin: 0; /* Remove margin to keep title and text close */
+  text-align: left;
+}
+
+body.dark-mode .intro-title {
+  color: var(--text-color-dark);
+}
+
+.intro-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: var(--text-color-light);
+  margin-top: 30px; /* Small space between title and text */
+  text-align: left;
+  margin-bottom: -80px;
+}
+
+body.dark-mode .intro-text {
+  color: var(--text-color-dark);
+}
+
+
+
+
+

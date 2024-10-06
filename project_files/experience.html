@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experience | Shyam Kannan</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="experience.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- Main Container for the whole page -->
+  <div class="page-container">
+
+    <!-- Light/Dark Mode Toggle Button & Navigation -->
+    <header>
+      <nav class="nav-container">
+        <button id="theme-toggle" class="theme-toggle">🌙</button>
+        <ul class="tab-navigation">
+          <li><a href="index.html" class="tab">About</a></li>
+          <li><a href="projects.html" class="tab">Projects</a></li>
+          <li><a href="experience.html" class="tab active">Experience</a></li>
+          <li><a href="skills.html" class="tab">Skills</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Content for Experience Section -->
+    <main class="content">
+      <div class="content-container">
+        <!-- Left side with "Why hire me?" and tab buttons -->
+        <div class="hire-me-container">
+          <h1 class="hire-me-title">Why hire me?</h1>
+          <p class="hire-me-text">I’m actively seeking roles where I can bring my expertise and passion for technology to a dynamic team. With a strong foundation in both frontend and backend development, I’m constantly learning and adapting to the latest industry trends, ready to tackle new challenges and make impactful contributions.</p>
+          <button class="tab-button active" id="experience-tab">Experience</button>
+          <button class="tab-button" id="education-tab">Education</button>
+        </div>
+
+        <!-- Horizontal Timeline for Experience -->
+        <div class="timeline-container" id="experience-section">
+          <div class="timeline">
+            <!-- Timeline Item 1 (Up) - Zuora -->
+            <div class="timeline-item up">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-circle">
+                <img src="images/zuora-logo@logotyp.us.svg" alt="Zuora Logo">
+              </div>
+              <div class="timeline-date">Present</div>
+              <div class="timeline-description">
+                <h3>Zuora</h3>
+                <p>Graduate Cloud Engineer</p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 (Down) - Zuora -->
+            <div class="timeline-item down">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-circle">
+                <img src="images/zuora-logo@logotyp.us.svg" alt="Zuora Logo">
+              </div>
+              <div class="timeline-date">2022</div>
+              <div class="timeline-description">
+                <h3>Zuora</h3>
+                <p>Software Engineer Intern</p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 3 (Up) - Kashmir World Foundation -->
+            <div class="timeline-item up">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-circle">
+                <img src="Images/kwf_transparent.png" alt="Kashmir World Foundation Logo">
+              </div>
+              <div class="timeline-date">2021</div>
+              <div class="timeline-description">
+                <h3>Kashmir World Foundation</h3>
+                <p>Artificial Intelligence Intern</p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 4 (Down) - Enverus -->
+            <div class="timeline-item down">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-circle">
+                <img src="Images/enverus_transparent.png" alt="Enverus Logo">
+              </div>
+              <div class="timeline-date">2019</div>
+              <div class="timeline-description">
+                <h3>Enverus</h3>
+                <p>Software Engineer Intern</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Horizontal Timeline for Education -->
+        <div class="timeline-container" id="education-section" style="display: none;">
+          <div class="timeline">
+            <!-- Timeline Item 1 (Up) -->
+            <div class="timeline-item up">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot"></div> <!-- Dot added -->
+              <div class="timeline-circle">
+                <img src="images/san-jose-state-spartans.svg" alt="SJSU Logo">
+              </div>
+              <div class="timeline-date">2022</div>
+              <div class="timeline-description">
+                <h3>SJSU</h3>
+                <p>Master's in AI</p>
+              </div>
+            </div>
+
+            <!-- Timeline Item 2 (Down) -->
+            <div class="timeline-item down">
+              <div class="timeline-line"></div>
+              <div class="timeline-dot"></div> <!-- Dot added -->
+              <div class="timeline-circle">
+                <img src="images/arizona-state-sun-devils-logo@logotyp.us.svg" alt="ASU Logo">
+              </div>
+              <div class="timeline-date">2020</div>
+              <div class="timeline-description">
+                <h3>ASU</h3>
+                <p>BS in Computer Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+      <hr class="footer-line">
+      <p>© 2024 Shyam Kannan. All rights reserved.</p>
+    </footer>
+
+  </div>
+
+  <!-- JavaScript for Tab Switching -->
+  <script src="script.js"></script>
+
+</body>
+</html>
+
