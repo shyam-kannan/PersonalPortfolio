@@ -563,49 +563,119 @@ body.dark-mode .hero-image img:hover {
   }
 }
 
-/* iPad or Tablet Styles */
-@media only screen and (min-width: 769px) and (max-width: 1024px) {
-  body {
-    padding: 0 20px;
-  }
+/* Base styles for mobile view */
+@media only screen and (max-width: 768px) {
 
+  /* Container and Body Styling */
   .page-container {
-    padding: 30px;
-    width: 100%; /* Make the container fit better on tablets */
+    padding: 20px;
+    width: 90%; /* Adjust container width */
+    box-sizing: border-box;
   }
 
-  .nav-container {
-    padding: 15px;
+  /* Header and Navbar */
+  nav.nav-container {
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--page-bg-color-light);
   }
 
-  /* About Title */
-  h1 {
-    font-size: 2.2rem;
+  nav.nav-container ul.tab-navigation {
+    display: none; /* Hide nav links for mobile */
+  }
+
+  nav.nav-container #theme-toggle {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 10px;
+  }
+
+  nav.nav-container .hamburger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 24px;
+    padding: 10px;
+  }
+
+  nav.nav-container .dropdown-menu {
+    display: none;
+    background-color: var(--bg-color-light);
+    list-style-type: none;
+    padding: 10px;
+    border-radius: 8px;
+  }
+
+  nav.nav-container .dropdown-menu li {
+    padding: 10px 0;
+  }
+
+  nav.nav-container .dropdown-menu li a {
+    color: var(--text-color-light);
+    text-decoration: none;
+  }
+
+  /* About Section */
+  .hire-me-title {
+    font-size: 1.8rem; /* Reduced size */
     text-align: center;
-    margin-top: 80px;
+    margin-bottom: 10px;
   }
 
-  /* About Text */
   .hire-me-text {
-    font-size: 1.1rem;
-    line-height: 1.8rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    text-align: justify;
+  }
+
+  /* Profile Image */
+  .profile-image {
+    width: 180px; /* Reduce image size */
+    height: 180px;
+    border-radius: 50%;
+    margin: 0 auto 20px; /* Center align and add margin */
+  }
+
+  /* Button */
+  .download-cv-button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    width: 100%;
+    margin-top: 20px;
     text-align: center;
-  }
-
-  /* Profile Picture */
-  .profile-picture-container img {
-    width: 220px;
-  }
-
-  /* Social Links */
-  .social-links a {
-    font-size: 1.3rem;
-    margin: 0 12px;
   }
 
   /* Footer */
   footer {
-    font-size: 0.9rem;
-    margin-top: 50px;
+    font-size: 0.8rem;
+    padding: 20px 0;
+    text-align: center;
+  }
+
+  /* Remove extra space at the bottom */
+  body {
+    margin-bottom: 0;
+  }
+
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger-menu {
+  display: none; /* Default hidden */
+}
+
+/* For smaller devices */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+
+  nav.nav-container ul.tab-navigation {
+    display: none;
   }
 }
