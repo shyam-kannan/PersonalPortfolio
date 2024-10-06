@@ -549,58 +549,89 @@ body.dark-mode .hero-image img:hover {
   }
 }
 
-/* For very small screens (like older phones) */
-@media (max-width: 480px) {
+/* General styles remain the same */
+
+/* Media queries for smaller screens (mobile) */
+@media only screen and (max-width: 768px) {
+  
+  /* Reduce padding and width for the page container */
   .page-container {
-    padding: 10px; /* Further reduced padding */
+    padding: 20px; /* Reduce padding for smaller screens */
+    max-width: 100%; /* Ensure the container fits the screen width */
   }
 
-  h1 {
-    font-size: 1.5rem; /* Further reduce main heading size */
-  }
-
-  h2, h3 {
-    font-size: 1.1rem; /* Further reduce subheading size */
-  }
-
-  p {
-    font-size: 0.8rem; /* Reduce paragraph font size */
-    line-height: 1.3; /* Adjust line height */
-  }
-
+  /* Adjust navigation tab styles for mobile */
   .tab-navigation {
-    gap: 5px; /* Smaller gaps between tabs */
+    flex-direction: column; /* Stack navigation items vertically */
+    gap: 10px; /* Reduce the gap between tabs */
+    padding: 5px 15px; /* Reduce padding */
   }
 
-  .tab-navigation .tab {
-    padding: 4px 6px;
-    font-size: 0.7rem; /* Reduce nav tab font size */
+  /* Adjust font sizes */
+  h1 {
+    font-size: 28px; /* Reduce heading size */
   }
 
-  .tab-button {
-    padding: 4px 10px;
-    font-size: 0.7rem; /* Reduce button size */
+  p, .hero-text p {
+    font-size: 14px; /* Smaller text */
+    line-height: 1.4; /* Adjust line height */
   }
 
-  .about-image {
-    width: 60px; /* Further reduce image size */
-    height: 60px;
+  /* Reduce image size */
+  .hero-image img {
+    width: 150px; /* Smaller profile image */
+    height: 150px;
   }
 
-  .about-content {
-    padding: 8px;
+  /* Smaller buttons */
+  .tab-button, .download-cv-btn {
+    font-size: 12px; /* Reduce button font size */
+    padding: 8px 16px; /* Smaller padding */
   }
 
-  .timeline-item {
-    width: 80px;
+  /* Hero section adjustments */
+  .hero-section {
+    flex-direction: column; /* Stack hero text and image */
+    padding: 20px 0;
   }
 
-  .timeline-circle img {
-    width: 60%;
-    height: 60%;
+  .hero-content {
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center;
+    text-align: center; /* Center-align the text */
   }
 
+  .hero-text {
+    max-width: 100%; /* Ensure the text fits the screen */
+    padding-left: 0;
+  }
+
+  /* Social links adjustments */
+  .social-links {
+    margin-top: 20px; /* Reduce margin */
+    align-items: center; /* Center-align the icons */
+  }
+
+  .social-links a {
+    font-size: 12px; /* Smaller text */
+  }
+
+  /* Footer adjustments */
   footer {
-    font-size: 10px;
+    font-size: 12px; /* Smaller footer text */
+  }
+
+  /* Typing effect */
+  .typewriter {
+    font-size: 24px; /* Smaller typewriter effect */
+  }
+
+  /* Reduce padding for buttons */
+  .hero-buttons {
+    margin-top: 10px;
+  }
+
+  .download-cv-btn {
+    padding: 8px 16px; /* Smaller padding */
   }
 }
