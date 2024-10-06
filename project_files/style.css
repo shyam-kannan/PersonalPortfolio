@@ -387,142 +387,95 @@ body.dark-mode .cursor-hidden {
   animation: none;
 }
 
-/* Typing effect adjustments for mobile screens */
-@media (max-width: 768px) {
-  .typewriter {
-    font-size: 1.8rem;  /* Smaller font for mobile devices */
-    font-weight: 600;
-    max-height: 50%
-    max-width: 50%
-    border-right: 1px solid var(--hover-color);  /* Adjust cursor size for mobile */
-    animation: typing-mobile 2.5s steps(25) 1s 1 normal both, blink 0.5s step-end infinite;
-    margin-bottom: 15px;
-  }
-
-  /* Mobile specific typing animation */
-  @keyframes typing-mobile {
-    from {
-      width: 0;
-    }
-    to {
-      width: 100%;
-    }
-  }
-}
-
-/* Aesthetics */
-/* Gradient Background for light mode */
-body {
-  background: linear-gradient(120deg, #f0f0f0, #ffffff);
-}
-
-body.dark-mode {
-  background: linear-gradient(120deg, #1a1a1a, #000000);
-}
-
-
-.download-cv-btn:hover {
-  background-color: #00ff88; /* Brighter green on hover */
-  box-shadow: 0px 8px 20px rgba(0, 255, 136, 0.3); /* Stronger shadow */
-}
-
-/* Glowing effect on profile picture */
-.hero-image img {
-  border: 3px solid transparent;
-  box-shadow: 0px 0px 20px rgba(7, 7, 7, 0.3);
-}
-
-.hero-image img:hover {
-  box-shadow: 0px 0px 30px rgba(10, 10, 10, 0.5);
-}
-
-body.dark-mode .hero.hero-image img {
-  border: 3px solid transparent;
-  box-shadow: 0px 0px 20px rgba(255, 251, 251, 0.3);
-}
-
-body.dark-mode .hero-image img:hover {
-  box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.5);
-}
-
-.hero-image img:hover {
-  transform: rotate(5deg); /* Tilts the image slightly */
-  transition: transform 0.3s ease-in-out;
-}
-
-/* Hide the dropdown by default */
-.hidden {
-  display: none;
-}
-
-.hamburger-menu {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
 /* Stack content for mobile screens */
 @media (max-width: 768px) {
-  .tab-navigation {
-    flex-direction: column;
-    position: absolute;
-    top: 50px;
-    right: 0;
-    background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    padding: 10px;
-    display: none;
-  }
 
-  .tab-navigation.show {
+  /* Ensure body can scroll vertically and page grows based on content */
+  /* Ensure the body allows vertical scrolling */
+  body {
+    overflow-y: auto;
+    height: auto;
     display: flex;
-  }
-
-  /* Show the hamburger button */
-  .hamburger-menu {
+    flex-direction: column;
+    min-height: 100vh; /* Make sure the page occupies the full height */
+    overflow-y: scroll; /* Allow vertical scrolling */
     display: block;
   }
 
-  .hero-content {
-    flex-direction: column;
-    align-items: flex-start;
+  /* Ensure the page container grows with content and footer stays at bottom */
+  .page-container {
+    flex: 1;
+    min-height: 100vh; /* Ensure the page container occupies full height */
+    padding: 20px; /* Increase padding for mobile */
+    max-width: 100vw; /* Ensure the content fits the viewport width */
+    box-sizing: border-box; /* Include padding in the element's width */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    box-sizing: border-box; /* Include padding in the element's total width */
   }
 
-  .hero-image, .social-links {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 20px;
-    width: 100%;
-    align-items: center;
-  }
-
-  .profile-img {
-    width: 100px;
-    height: 100px;
-  }
-
-  .typewriter {
-    font-size: 1.8rem;
+  /* Make the text smaller on mobile screens */
+  h1 {
+    font-size: 1.8rem; /* Reduce size of main heading */
+    font-size: 1.5rem; /* Reduce size of main heading */
     text-align: center;
+    margin-bottom: 20px;
+    white-space: normal; /* Allow text to wrap */
+@@ -495,9 +492,9 @@
+  p {
+    font-size: 0.9rem; /* Adjust the paragraph font size */
+    line-height: 1.5;
+    white-space: normal; /* Ensure paragraphs wrap */
+    padding-left: 15px;  /* Add padding to the left */
+    padding-right: 15px; /* Add padding to the right */
+    padding-left: 20px;
+    padding-right: 20px;
+    word-wrap: break-word;
   }
 
-  .social-links a {
+  /* Stack the navigation vertically on mobile and make the dropdown work */
+@@ -526,7 +523,7 @@
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    gap: 5px;
+    max-width: 100%; /* Fit content within the screen width */
+    width: 100%;
   }
 
-  .social-links img {
-    width: 30px;
-    height: 30px;
+  /* Move the hero-image and social links to be above the text */
+@@ -572,28 +569,29 @@
+
+  /* Typing animation adjustments for mobile */
+  .typewriter h1 {
+    font-size: 1.8rem; /* Make the typing animation text smaller */
+    font-size: 1.3rem; /* Smaller for mobile */
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break words if necessary */
+    word-wrap: break-word;
   }
 
+  /* Reduce margins and padding to make the content fit better on mobile */
+  .hero-section {
+    padding: 0;
+    max-width: 100%; /* Ensure section fits within screen */
+    width: 100%; /* Ensure section fits within screen */
+    max-width: 100%;
+  }
+
+  /* Footer will always stay at the bottom of the page */
+  /* Ensure the footer sticks to the bottom */
   footer {
     text-align: center;
     padding: 10px;
+    max-width: 100vw; /* Ensure footer fits within viewport */
+    margin-top: auto; /* Push the footer to the bottom */
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Footer line adjusts for mobile */
+  /* Footer line adjustments for mobile */
+  .footer-line {
+    width: 100%;
+    margin-top: 10px;
   }
 }
