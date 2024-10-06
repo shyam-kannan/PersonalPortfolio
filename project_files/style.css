@@ -11,13 +11,12 @@
   --font-family: 'Poppins', sans-serif;
 }
 
-/* Global Styles */
-body {
-  font-family: 'Poppins', sans-serif;
+/* General body styling */
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background-color: var(--bg-color-light);
-  color: var(--text-color-light);
+  overflow: hidden; /* Prevent scrolling */
 }
 
 body {
@@ -429,225 +428,88 @@ body.dark-mode .hero-image img:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Mobile Styles */
-@media (max-width: 768px) {
-  /* Adjust page container padding for smaller screens */
+/* Mobile Styles for About Page */
+@media only screen and (max-width: 768px) {
+  /* General body styling */
+  body {
+    overflow-x: hidden;
+    padding: 0 10px; /* Add padding for mobile responsiveness */
+  }
+
   .page-container {
     padding: 20px;
-  }
-
-  /* Reduce the size of headings */
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2, h3 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-    line-height: 1.5;
-  }
-
-  /* Scale down the tab navigation */
-  .tab-navigation {
-    padding: 5px;
-    gap: 10px;
-  }
-
-  .tab-navigation .tab {
-    padding: 8px 10px;
-    font-size: 0.9rem;
-  }
-
-  /* Make the buttons a bit smaller */
-  .tab-button {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-  }
-
-  /* Reduce the timeline size */
-  .timeline-item {
-    width: 100px; /* Smaller timeline items */
-  }
-
-  .timeline-circle img {
-    width: 70%;
-    height: 70%;
-  }
-
-  /* Adjust footer font size */
-  footer {
-    font-size: 12px;
-  }
-}
-
-/* Adjust for smaller devices */
-@media (max-width: 768px) {
-  /* Adjust page container padding for smaller screens */
-  .page-container {
-    padding: 15px; /* Reduced padding */
-  }
-
-  /* Reduce the size of headings */
-  h1 {
-    font-size: 1.8rem; /* Reduce the size of the main heading */
-  }
-
-  h2, h3 {
-    font-size: 1.3rem; /* Reduce subheading size */
-  }
-
-  p {
-    font-size: 0.9rem; /* Reduce paragraph font size */
-    line-height: 1.4; /* Adjust line height for better readability */
-  }
-
-  /* Scale down navigation tabs */
-  .tab-navigation {
-    padding: 5px;
-    gap: 10px;
-  }
-
-  .tab-navigation .tab {
-    padding: 6px 8px;
-    font-size: 0.8rem; /* Smaller text for navigation */
-  }
-
-  /* Scale down buttons */
-  .tab-button {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-
-  /* Adjust the size of the profile image */
-  .about-image {
-    width: 80px; /* Reduce image size */
-    height: 80px;
-  }
-
-  /* Adjust margins and paddings for text and images */
-  .about-content {
-    margin: 0 auto;
-    padding: 10px; /* Reduced padding */
-  }
-
-  /* Make the timeline smaller */
-  .timeline-item {
-    width: 100px;
-  }
-
-  .timeline-circle img {
-    width: 70%;
-    height: 70%;
-  }
-
-  /* Adjust footer size */
-  footer {
-    font-size: 12px;
-  }
-}
-
-/* General Mobile Styles */
-@media (max-width: 768px) {
-  /* Body */
-  body {
-    font-size: 0.85rem; /* Reduce font size */
-    padding: 0 5px; /* Minimize padding */
-  }
-
-  /* Page Container */
-  .page-container {
-    padding: 15px; /* Minimize padding */
-    max-width: 100%; /* Ensure full width usage */
+    max-width: 100%;
     width: 100%;
   }
 
-  /* Navigation */
-  .nav-container {
-    padding-top: 20px; /* Reduce padding */
+  /* About Title */
+  h1 {
+    font-size: 1rem; /* Reduced font size for mobile */
+    text-align: center;
+    margin-bottom: 10px; /* Add space below the title */
   }
 
-  .tab-navigation .tab {
-    font-size: 0.7rem; /* Smaller font for nav links */
-    padding: 6px 8px; /* Minimize padding */
-  }
-
-  /* Header Styling */
-  h1, h2, h3, p {
-    font-size: 0.95rem; /* Further reduce header font sizes */
-    line-height: 1.1; /* Adjust line height */
-    margin-bottom: 5px; /* Reduce margin between elements */
-  }
-
-  .hire-me-title {
-    font-size: 1.6rem; /* Smaller title */
-    margin-bottom: 8px; /* Reduce space below the title */
-  }
-
+  /* About Text */
   .hire-me-text {
-    font-size: 0.85rem; /* Adjust text size */
-    margin-bottom: 10px; /* Reduce margin */
+    font-size: 0.5rem; /* Reduced font size */
+    line-height: 1.4rem; /* Adjust line height for readability */
+    margin: 0 0 15px; /* Add margin to prevent text from touching the edges */
+    text-align: left;
   }
 
-  /* Buttons styling */
-  .tab-button {
-    padding: 6px 10px; /* Smaller padding */
-    font-size: 0.7rem; /* Reduce font size */
-    margin-bottom: 10px; /* Reduce margin between buttons */
+  /* Image Container */
+  .profile-picture-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px; /* Space between the image and text */
   }
 
-  /* Picture container and scaling */
-  .profile-picture {
-    max-width: 80px; /* Reduce image size */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Reduce margin */
+  .profile-picture-container img {
+    width: 120px; /* Reduce image size */
+    height: auto;
+    border-radius: 50%;
   }
 
   /* Social Links */
   .social-links {
     display: flex;
     justify-content: center;
-    margin-bottom: 10px; /* Reduce space between links */
+    margin-bottom: 5px; /* Reduced margin for spacing */
   }
 
   .social-links a {
-    font-size: 0.7rem; /* Smaller link size */
-    padding: 4px; /* Adjust padding */
-    margin-right: 5px; /* Reduce space between icons */
+    font-size: 0.5rem; /* Reduced link size */
+    margin: 0 6px; /* Smaller gap between links */
   }
 
-  /* Horizontal Timeline */
-  .timeline-container {
-    padding: 15px 0; /* Reduce padding */
-    margin-top: -30px; /* Adjust margin to avoid excess space */
+  /* Buttons */
+  .tab-button {
+    padding: 8px 14px; /* Reduced padding for buttons */
+    font-size: 0.7rem; /* Reduced font size */
+    margin: 10px 5px; /* Adjust spacing between buttons */
   }
 
-  .timeline-item .timeline-circle {
-    width: 35px; /* Shrink circles */
-    height: 35px;
+  /* CV Download Button */
+  .hire-me-container .tab-button.active {
+    margin-top: 10px;
   }
 
-  .timeline-description h3 {
-    font-size: 0.85rem; /* Smaller company name font */
+  /* Adjust spacing between elements */
+  .hire-me-container {
+    margin-bottom: 10px; /* Space between sections */
   }
 
-  .timeline-description p {
-    font-size: 0.7rem; /* Smaller role font */
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 
   /* Footer */
   footer {
-    padding: 10px 0;
-  }
-
-  .footer-content p {
-    font-size: 0.7rem; /* Smaller footer text */
-  }
-
-  /* Reduce space between sections */
-  .content-container, .hire-me-container {
-    margin-bottom: 5px; /* Minimize margin between sections */
+    text-align: center;
+    font-size: 0.8rem; /* Reduce footer text size */
+    margin-top: 20px;
   }
 }
