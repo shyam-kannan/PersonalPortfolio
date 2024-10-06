@@ -11,13 +11,13 @@
   --font-family: 'Poppins', sans-serif;
 }
 
-/* General body styling */
-html, body {
-  height: 100%;
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
   margin: 0;
   padding: 0;
-  /* Remove overflow: hidden to allow scrolling on small screens */
-  overflow-x: hidden; /* Keep horizontal scrolling hidden */
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
 }
 
 body {
@@ -551,87 +551,105 @@ body.dark-mode .hero-image img:hover {
 
 /* General styles remain the same */
 
-/* Media queries for smaller screens (mobile) */
-@media only screen and (max-width: 768px) {
-  
-  /* Reduce padding and width for the page container */
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color-light);
+  color: var(--text-color-light);
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .nav-container ul {
+    font-size: 0.9rem; /* Smaller font for nav */
+    padding: 0; /* Remove extra padding */
+  }
+
+  .nav-container {
+    flex-direction: column; /* Stack the navigation vertically on mobile */
+  }
+
   .page-container {
-    padding: 20px; /* Reduce padding for smaller screens */
-    max-width: 100%; /* Ensure the container fits the screen width */
+    width: 95%; /* Take most of the mobile screen width */
+    padding: 20px; /* Reduce padding */
   }
 
-  /* Adjust navigation tab styles for mobile */
-  .tab-navigation {
-    flex-direction: column; /* Stack navigation items vertically */
-    gap: 10px; /* Reduce the gap between tabs */
-    padding: 5px 15px; /* Reduce padding */
-  }
-
-  /* Adjust font sizes */
   h1 {
-    font-size: 28px; /* Reduce heading size */
+    font-size: 1.8rem; /* Scale down heading */
   }
 
-  p, .hero-text p {
-    font-size: 14px; /* Smaller text */
-    line-height: 1.4; /* Adjust line height */
+  p {
+    font-size: 1rem; /* Scale down paragraph text */
   }
 
-  /* Reduce image size */
-  .hero-image img {
-    width: 150px; /* Smaller profile image */
-    height: 150px;
+  .timeline-container {
+    padding: 20px 0; /* Reduce padding for timeline */
   }
 
-  /* Smaller buttons */
-  .tab-button, .download-cv-btn {
-    font-size: 12px; /* Reduce button font size */
-    padding: 8px 16px; /* Smaller padding */
+  .timeline-circle {
+    width: 40px;
+    height: 40px; /* Reduce circle size */
   }
 
-  /* Hero section adjustments */
-  .hero-section {
-    flex-direction: column; /* Stack hero text and image */
-    padding: 20px 0;
+  .hire-me-container {
+    margin-top: 20px;
   }
 
-  .hero-content {
-    flex-direction: column; /* Stack the content vertically */
-    align-items: center;
-    text-align: center; /* Center-align the text */
+  .hire-me-title {
+    font-size: 1.8rem; /* Smaller title */
   }
 
-  .hero-text {
-    max-width: 100%; /* Ensure the text fits the screen */
-    padding-left: 0;
+  .tab-button {
+    font-size: 0.8rem;
+    padding: 8px 16px;
   }
 
-  /* Social links adjustments */
   .social-links {
-    margin-top: 20px; /* Reduce margin */
-    align-items: center; /* Center-align the icons */
+    flex-direction: row; /* Ensure social links stack properly */
   }
 
-  .social-links a {
-    font-size: 12px; /* Smaller text */
+  .content-container img {
+    width: 100px;
+    height: 100px; /* Adjust image size */
   }
 
-  /* Footer adjustments */
   footer {
-    font-size: 12px; /* Smaller footer text */
+    font-size: 0.8rem; /* Reduce footer font size */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.4rem; /* Even smaller heading for small screens */
   }
 
-  /* Typing effect */
-  .typewriter {
-    font-size: 24px; /* Smaller typewriter effect */
+  p {
+    font-size: 0.9rem; /* Smaller paragraph text */
   }
 
-  /* Reduce padding for buttons */
-  .hero-buttons {
-    margin-top: 10px;
+  .nav-container ul {
+    font-size: 0.8rem; /* Smaller nav text */
   }
 
-  .download-cv-btn {
-    padding: 8px 16px; /* Smaller padding */
+  .tab-navigation {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.7rem; /* Smallest font size for mobile */
+  }
+
+  .timeline-circle {
+    width: 35px;
+    height: 35px; /* Further reduce circle size */
+  }
+
+  .timeline-description h3 {
+    font-size: 1rem;
+  }
+
+  .timeline-description p {
+    font-size: 0.8rem; /* Make the description text readable on small screens */
   }
 }
