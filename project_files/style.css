@@ -392,6 +392,8 @@ body.dark-mode .cursor-hidden {
   .typewriter {
     font-size: 1.8rem;  /* Smaller font for mobile devices */
     font-weight: 600;
+    max-height: 50%
+    max-width: 50%
     border-right: 1px solid var(--hover-color);  /* Adjust cursor size for mobile */
     animation: typing-mobile 2.5s steps(25) 1s 1 normal both, blink 0.5s step-end infinite;
     margin-bottom: 15px;
