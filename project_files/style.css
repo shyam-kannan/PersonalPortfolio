@@ -455,7 +455,7 @@ body.dark-mode .hero-image img:hover {
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: center !important;
-    min-height: 120vh !important;
+    min-height: 90vh !important;
     overflow-y: auto !important;
   }
 
