@@ -356,35 +356,42 @@ body.dark-mode .download-cv-btn {
   font-size: 36px;
   font-weight: 700;
   color: var(--text-color-light);
-  border-right: 3px solid var(--text-color-light);
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
   width: fit-content;
-  animation: blink 0.7s step-end infinite;
+  text-align: left;
+}
+
+/* Blinking cursor */
+.cursor {
+  border-right: 3px solid var(--text-color-light);
+  animation: blink 1s infinite;
+  display: inline-block;
 }
 
 body.dark-mode .typewriter {
   color: var(--text-color-dark);
+}
+
+/* Blinking cursor in dark mode */
+body.dark-mode .cursor {
   border-right: 3px solid var(--text-color-dark);
 }
 
-/* Blinking cursor effect */
 @keyframes blink {
-  50% {
-    border-color: transparent;
-  }
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 /* Hide the cursor */
 .cursor-hidden {
-  border-right: none;
-  animation: none;
+  display: none;
 }
 
 body.dark-mode .cursor-hidden {
-  border-right: none;
-  animation: none;
+  display: none;
 }
 
 
@@ -428,105 +435,267 @@ body.dark-mode .hero-image img:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-/* General Mobile Styles */
+/* MEDIA QUERIES FOR MOBILE */
 @media (max-width: 768px) {
-  /* Body */
-  body {
-    font-size: 0.85rem; /* Reduce font size */
-    padding: 0 5px; /* Minimize padding */
-  }
-
-  /* Page Container */
+  /* Remove page-container effect in mobile */
   .page-container {
-    padding: 15px; /* Minimize padding */
-    max-width: 100%; /* Ensure full width usage */
-    width: 100%;
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #fff !important;
   }
 
-  /* Navigation */
-  .nav-container {
-    padding-top: 20px; /* Reduce padding */
+  /* Body adjustments for mobile view */
+  body {
+    background-color: #fff !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    min-height: 106vh !important;
+    overflow-y: auto !important;
   }
 
-  .tab-navigation .tab {
-    font-size: 0.7rem; /* Smaller font for nav links */
-    padding: 6px 8px; /* Minimize padding */
+ /* Navigation container */
+.nav-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0px !important;
+  width: 80% !important;
+  margin: 0 auto !important; /* Ensures the nav container stays centered */
+}
+
+/* Center theme toggle button under nav for mobile */
+.theme-toggle {
+  display: block !important;
+  margin: 20px auto !important;
+  font-size: 1.8rem !important;
+  text-align: center !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+}
+
+/* Tab navigation */
+.tab-navigation {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  width: 80% !important;
+  margin: 0 auto !important; /* Ensures the tab navigation stays centered */
+}
+
+
+   /* Profile image positioned at the top */
+   .hero-image {
+    order: -1 !important; /* Moves the image above the text */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 20px !important; /* Add some space below the image */
+    margin-top: -60px;
+    margin-right: -40px;
   }
 
-  /* Header Styling */
-  h1, h2, h3, p {
-    font-size: 0.95rem; /* Further reduce header font sizes */
-    line-height: 1.1; /* Adjust line height */
-    margin-bottom: 5px; /* Reduce margin between elements */
+  .profile-img {
+    width: 250px !important;
+    height: 250px !important;
+    border-radius: 50% !important;
   }
 
-  .hire-me-title {
-    font-size: 1.6rem; /* Smaller title */
-    margin-bottom: 8px; /* Reduce space below the title */
+  /* Ensure other elements don't change */
+  .hero-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+  .hero-text h1 {
+    font-size: 1.5rem !important;
+    margin-top: -70px !important;
+    text-align: center !important;
+    margin: 10 auto !important; /* Center horizontally */
+    padding: 0px 0 !important; /* Add padding if needed */
+    width: 100% !important; /* Ensure it takes up full width */
+    margin-left: -30px;
   }
 
-  .hire-me-text {
-    font-size: 0.85rem; /* Adjust text size */
-    margin-bottom: 10px; /* Reduce margin */
+  .hero-text p {
+    font-size: 1rem !important;
+    text-align: center !important; /* Center text for mobile */
+    line-height: 1.6 !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 5px !important;
+    margin-left: -60px;
+ 
   }
 
-  /* Buttons styling */
-  .tab-button {
-    padding: 6px 10px; /* Smaller padding */
-    font-size: 0.7rem; /* Reduce font size */
-    margin-bottom: 10px; /* Reduce margin between buttons */
+  .hero-buttons {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-top: 10px !important;
+    margin-left: -60px;
+    margin-bottom: 20px;
   }
 
-  /* Picture container and scaling */
-  .profile-picture {
-    max-width: 80px; /* Reduce image size */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Reduce margin */
+  .download-cv-btn {
+    padding: 8px 16px !important;
+    font-size: 0.9rem !important;
+    background-color: #333 !important;
+    color: #fff !important;
+    border-radius: 8px !important;
+    margin-right: 15px !important;
   }
 
-  /* Social Links */
+  /* Social icons aligned horizontally */
   .social-links {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px; /* Reduce space between links */
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 10px !important;
+    margin-top: 5px !important;
   }
 
-  .social-links a {
-    font-size: 0.7rem; /* Smaller link size */
-    padding: 4px; /* Adjust padding */
-    margin-right: 5px; /* Reduce space between icons */
+  .social-links a img {
+    margin-top: 10px;
+    width: 25px !important;
+    height: 25px !important;
   }
 
-  /* Horizontal Timeline */
-  .timeline-container {
-    padding: 15px 0; /* Reduce padding */
-    margin-top: -30px; /* Adjust margin to avoid excess space */
-  }
-
-  .timeline-item .timeline-circle {
-    width: 35px; /* Shrink circles */
-    height: 35px;
-  }
-
-  .timeline-description h3 {
-    font-size: 0.85rem; /* Smaller company name font */
-  }
-
-  .timeline-description p {
-    font-size: 0.7rem; /* Smaller role font */
-  }
-
-  /* Footer */
+  /* Footer styling */
   footer {
-    padding: 10px 0;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0px 0 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    background-color: #fff !important;
+    box-shadow: none !important;
   }
 
-  .footer-content p {
-    font-size: 0.7rem; /* Smaller footer text */
+  .footer-line {
+    width: 100% !important;
+    margin: 0 auto !important;
+    border: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+  }
+  /* Hide "Follow on" text on mobile */
+  .desktop-only {
+    display: none !important;
   }
 
-  /* Reduce space between sections */
-  .content-container, .hire-me-container {
-    margin-bottom: 5px; /* Minimize margin between sections */
+   /* General Dark Mode Styling */
+body.dark-mode {
+    background-color:  #1a1a1a!important; /* Match the background of the nav bar */
+    font-size: 1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+}
+
+/* Remove the white gap at the top */
+body.dark-mode .page-container {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    background-color:  #1a1a1a !important; /* Ensure the background covers the full page */
+}
+
+/* Footer Styling in Dark Mode */
+body.dark-mode footer {
+    background-color:  #1a1a1a !important; /* Match the background of the page */
+    color: #fff !important; /* Ensure the text is visible */
+    box-shadow: none !important; /* Remove any box shadow */
+}
+
+/* Dark Mode for Download CV Button */
+body.dark-mode .download-cv-btn {
+    background-color:  #1a1a1a !important;
+    color: #fff !important;
+}
+
+.typewriter {
+  font-size: 1.5rem; /* Smaller font size for mobile */
+  text-align: center; /* Center text for mobile */
+  display: inline-block;
+}
+
+.cursor {
+  font-size: 1.5rem; /* Match the size of the text */
+  display: inline-block;
+  color: var(--text-color-light);
+  animation: blink 1s infinite;
+}
+
+body.dark-mode .typewriter {
+  font-size: 1.5rem; /* Adjust for mobile dark mode */
+}
+
+body.dark-mode .cursor {
+  font-size: 1.5rem; /* Match the size of the text in dark mode */
+  color: var(--text-color-dark);
+}
+
+/* Hide the cursor after typing is done */
+.cursor-hidden {
+  display: none;
+}
+
+body.dark-mode .cursor-hidden {
+  display: none;
+}
+
+  /* Apply dark mode styles only for mobile */
+  body.dark-mode .nav-container {
+    background-color: #181818 !important; /* Consistent dark background */
+    box-shadow: none !important; /* Remove extra shadow */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0px !important;
+    width: 80% !important;
+    margin: 0 auto !important; /* Ensures the nav container stays centered */
+  }
+
+  /* Ensure normal tab colors are consistent in mobile dark mode */
+  body.dark-mode .tab-navigation a {
+    background-color: transparent !important; /* Remove the box background */
+    color: #fff !important; /* Text should be white */
+  }
+
+  /* Remove unwanted gradients or shadows */
+  body.dark-mode .nav-container::before,
+  body.dark-mode .nav-container::after {
+    content: none !important;
+  }
+
+    /* Remove the box effect around active tabs */
+    body.dark-mode .tab-navigation a.active {
+      background-color: transparent !important;
+      color: #00ff88 !important; /* Neon green for active tab */
+      border: none !important; /* No border or box */
+    }
+}
+
+/* Styles for desktop, ensure follow text is shown */
+@media (min-width: 769px) {
+  .desktop-only {
+    display: inline-block !important;
   }
 }
