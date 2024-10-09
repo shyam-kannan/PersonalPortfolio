@@ -478,7 +478,7 @@ body.dark-mode .intro-text {
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: center !important;
-    min-height: 101vh !important;
+    min-height: 90vh !important;
     overflow-y: auto !important;
   }
 
