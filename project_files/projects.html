@@ -28,22 +28,25 @@
     </header>
 
     <main class="content">
-      <main class="content">
-        <!-- New Section for Title and Description -->
-        <section class="intro-section">
-          <h1 class="intro-title">What I Can Do</h1>
-          <p class="intro-text">Welcome to my projects portfolio. Here, you'll find a collection of the work I've done, ranging from full-stack web development to machine learning and AI. Each project reflects my passion for solving real-world problems using technology and my continuous drive to learn and grow as a developer. I'm constantly working on new projects and exploring cutting-edge technologies, so check back often to see what I'm building next.</p>
-        </section>
+      <!-- New Section for Title and Description -->
+      <section class="intro-section">
+        <h1 class="intro-title">What I Can Do</h1>
+        <p class="intro-text">Welcome to my projects portfolio. Here, you'll find a collection of the work I've done, ranging from full-stack web development to machine learning and AI. Each project reflects my passion for solving real-world problems using technology and my continuous drive to learn and grow as a developer.</p>
+      </section>
+
       <!-- Projects Wrapper -->
       <div class="projects-wrapper">
         <!-- First Project -->
         <section class="projects-section active">
+          <!-- For mobile responsiveness: moving the image first when stacked -->
+          <div class="project-image">
+            <img src="https://via.placeholder.com/600x400" alt="Project Image">
+          </div>
           <div class="project-text">
             <div class="project-number">01</div>
             <h2>C++ Compiler</h2>
-            <p class="project-description">Created a small compiler from scratch that will read an input program and represent it in a linked list. The compiler can read for loops, while loops, if else statements, and switch statements including when they are nested. Once input is read, mathematical operations can be done based on the statements and operators used. Built in 1 week using C++ and Visual Studio Code.</p>
+            <p class="project-description">Created a small compiler from scratch that will read an input program and represent it in a linked list. The compiler can read for loops, while loops, if else statements, and switch statements including when they are nested. Once input is read, mathematical operations can be done based on the statements and operators used.</p>
             <p class="project-tech">C++, Visual Studio Code</p>
-            
             <div class="project-buttons">
               <a href="https://github.com" target="_blank" class="github-icon">
                 <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub Icon" class="github-logo">
@@ -51,19 +54,18 @@
               </a>
             </div>
           </div>
-          <div class="project-image">
-            <img src="https://via.placeholder.com/600x400" alt="Project Image">
-          </div>
         </section>
     
         <!-- Second Project -->
         <section class="projects-section">
+          <div class="project-image">
+            <img src="https://via.placeholder.com/600x400" alt="Project Image">
+          </div>
           <div class="project-text">
             <div class="project-number">02</div>
             <h2>Security Camera</h2>
-            <p class="project-description">This project implements a security camera system using Python and OpenCV. The camera system uses pre-trained Haar Cascade classifiers to detect faces and full bodies in real-time. Once detection occurs, the system automatically starts recording video footage, ensuring any potential security events are captured. The recording continues for a specified duration after the last detection, preventing missed activity.</p>
+            <p class="project-description">This project implements a security camera system using Python and OpenCV. The camera system uses pre-trained Haar Cascade classifiers to detect faces and full bodies in real-time. Once detection occurs, the system automatically starts recording video footage.</p>
             <p class="project-tech">OpenCV, Python</p>
-            
             <div class="project-buttons">
               <a href="https://github.com/your-repo-link" target="_blank" class="github-icon">
                 <img src="https://img.icons8.com/ios-filled/50/000000/github.png" alt="GitHub Icon" class="github-logo">
@@ -71,27 +73,21 @@
               </a>
             </div>
           </div>
-          <div class="project-image">
-            <img src="https://via.placeholder.com/600x400" alt="Project Image">
-          </div>
         </section>
 
      <!-- Arrows for navigating projects -->
-  <div class="arrow-buttons">
-    <button class="arrow-button" id="prev-button">
-      <i class="fas fa-chevron-left"></i>
-    </button>
-    <button class="arrow-button" id="next-button">
-      <i class="fas fa-chevron-right"></i>
-    </button>
-  </div>
+      <div class="arrow-buttons">
+        <button class="arrow-button" id="prev-button">
+          <i class="fas fa-chevron-left"></i>
+        </button>
+        <button class="arrow-button" id="next-button">
+          <i class="fas fa-chevron-right"></i>
+        </button>
+      </div>
 
-<!-- Progress Dots (dynamically generated) -->
-<div class="progress-dots"></div>
-
-
-</main>
-
+      <!-- Progress Dots (dynamically generated) -->
+      <div class="progress-dots"></div>
+    </main>
 
     <!-- Footer Section -->
     <footer>
