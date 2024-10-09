@@ -76,30 +76,29 @@ window.addEventListener('load', function() {
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const typewriterText = "Hello, I'm Shyam Kannan";
+  const text = "Hello, I'm Shyam Kannan!";
+  let index = 0;
+  const speed = 100; // Typing speed in milliseconds
+  const cursor = '<span class="cursor">|</span>'; // Cursor element
 
-  function startTypingAnimation() {
-    const typewriterElement = document.querySelector('.typewriter');
-    typewriterElement.innerHTML = "";  // Clear out the current text
+  // Ensure the text starts empty
+  document.querySelector(".typewriter").innerHTML = "";
 
-    let i = 0;
-    const typingSpeed = window.innerWidth < 768 ? 100 : 75;  // Slow down typing speed for mobile devices
-
-    function typeWriter() {
-      if (i < typewriterText.length) {
-        typewriterElement.innerHTML += typewriterText.charAt(i);
-        i++;
-        setTimeout(typeWriter, typingSpeed);
-      }
+  function typeWriter() {
+    if (index < text.length) {
+      // Append the current letter and cursor
+      document.querySelector(".typewriter").innerHTML = text.substring(0, index + 1) + cursor;
+      index++;
+      setTimeout(typeWriter, speed);
+    } else {
+      // After typing is done, remove the cursor
+      setTimeout(() => {
+        document.querySelector(".cursor").style.display = "none";
+      }, 1000); // Adjust delay for how long you want the cursor to stay after typing
     }
-    typeWriter();
   }
 
-  startTypingAnimation();
-
-  window.addEventListener('resize', () => {
-    startTypingAnimation();  // Restart the typing animation when the screen resizes
-  });
+  typeWriter(); // Start the typing effect
 });
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -145,55 +144,90 @@ document.addEventListener('DOMContentLoaded', function () {
   // Initial display
   showProject(currentProject);
 });
+document.addEventListener('DOMContentLoaded', function() {
+  const experienceTab = document.getElementById('experience-tab');
+  const educationTab = document.getElementById('education-tab');
 
-document.getElementById('experience-tab').addEventListener('click', function() {
-  const experienceSection = document.getElementById('experience-section');
-  const educationSection = document.getElementById('education-section');
-  
-  experienceSection.classList.add('active'); // Add active class for animation
-  educationSection.classList.remove('active'); // Remove active class
-  
-  experienceSection.style.display = 'block';
-  educationSection.style.display = 'none';
-  
-  // Trigger animation for the experience timeline
-  setTimeout(() => {
-    experienceSection.querySelector('.timeline').classList.add('animate-line');
-  }, 10);
-  
-  this.classList.add('active');
-  document.getElementById('education-tab').classList.remove('active');
-});
+  const experienceSection = document.getElementById('experience-list');
+  const educationSection = document.getElementById('education-list');
 
-document.getElementById('education-tab').addEventListener('click', function() {
-  const experienceSection = document.getElementById('experience-section');
-  const educationSection = document.getElementById('education-section');
-  
-  educationSection.classList.add('active'); // Add active class for animation
-  experienceSection.classList.remove('active'); // Remove active class
-  
-  educationSection.style.display = 'block';
-  experienceSection.style.display = 'none';
-  
-  // Trigger animation for the education timeline
-  setTimeout(() => {
-    educationSection.querySelector('.timeline').classList.add('animate-line');
-  }, 10);
-  
-  this.classList.add('active');
-  document.getElementById('experience-tab').classList.remove('active');
-});
+  const experienceTimeline = document.getElementById('experience-section');
+  const educationTimeline = document.getElementById('education-section');
 
-document.addEventListener('DOMContentLoaded', () => {
-  const menuToggle = document.getElementById('menu-toggle');
-  const dropdownMenu = document.getElementById('dropdown-menu');
+  // Function to handle mobile view logic (list view)
+  function activateMobileView() {
+    // Initially hide both list views
+    experienceSection.style.display = 'none';
+    educationSection.style.display = 'none';
 
-  menuToggle.addEventListener('click', () => {
-    dropdownMenu.classList.toggle('show');
+    // Default to showing the experience list and hiding the timeline
+    experienceSection.style.display = 'block';
+    experienceTimeline.style.display = 'none';
+
+    // Switch to Experience tab (list view)
+    experienceTab.addEventListener('click', function() {
+      educationSection.style.display = 'none';
+      educationTimeline.style.display = 'none';
+      experienceTimeline.style.display = 'none';
+      experienceSection.style.display = 'block';
+      experienceTab.classList.add('active');
+      educationTab.classList.remove('active');
+    });
+
+    // Switch to Education tab (list view)
+    educationTab.addEventListener('click', function() {
+      experienceSection.style.display = 'none';
+      experienceTimeline.style.display = 'none';
+      educationTimeline.style.display = 'none';
+      educationSection.style.display = 'block';
+      educationTab.classList.add('active');
+      experienceTab.classList.remove('active');
+    });
+  }
+
+  // Function to handle desktop view logic (timeline view)
+  function activateDesktopView() {
+    // Initially show the experience timeline and hide the list view
+    experienceSection.style.display = 'none';
+    educationSection.style.display = 'none';
+    experienceTimeline.style.display = 'block';
+
+    // Switch to Experience tab (timeline view)
+    experienceTab.addEventListener('click', function() {
+      educationSection.style.display = 'none';
+      experienceSection.style.display = 'none';
+      educationTimeline.style.display = 'none';
+      experienceTimeline.style.display = 'block';
+      experienceTab.classList.add('active');
+      educationTab.classList.remove('active');
+    });
+
+    // Switch to Education tab (timeline view)
+    educationTab.addEventListener('click', function() {
+      experienceSection.style.display = 'none';
+      educationSection.style.display = 'none';
+      experienceTimeline.style.display = 'none';
+      educationTimeline.style.display = 'block';
+      educationTab.classList.add('active');
+      experienceTab.classList.remove('active');
+    });
+  }
+
+  // Check screen width to apply mobile or desktop logic
+  if (window.innerWidth <= 768) {
+    activateMobileView();  // Activate list view for mobile
+  } else {
+    activateDesktopView(); // Activate timeline view for desktop
+  }
+
+  // Recheck screen size on window resize to ensure correct view is applied
+  window.addEventListener('resize', function() {
+    if (window.innerWidth <= 768) {
+      activateMobileView();  // Switch to mobile view if resized to smaller screen
+    } else {
+      activateDesktopView(); // Switch to desktop view if resized to larger screen
+    }
   });
 });
-
-
-
 
 
