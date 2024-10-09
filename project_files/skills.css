@@ -321,19 +321,6 @@ body.dark-mode .certifications-header {
   color: var(--text-color-dark);
 }
 
-/* Media Query for Mobile Screens */
-@media (max-width: 768px) {
-  .skills-certifications-layout {
-    flex-direction: column; /* Stacks the sections vertically on smaller screens */
-    align-items: flex-start;
-  }
-
-  .skills-certifications-separator {
-    width: 100%; /* Make the separator horizontal for smaller screens */
-    height: 1px;
-  }
-}
-
 /* Aesthetics */
 .skills-card, .certification-item {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -420,4 +407,318 @@ body.dark-mode .footer-line {
 
 body.dark-mode .footer-content p {
   color: var(--text-color-dark);
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 768px) {
+  /* Remove page-container effect in mobile */
+  .page-container {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #fff !important;
+  }
+
+  /* Body adjustments for mobile view */
+  body {
+    background-color: #fff !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+  }
+
+ /* Navigation container */
+.nav-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0px !important;
+  width: 80% !important;
+  margin: 0 auto !important; /* Ensures the nav container stays centered */
+}
+
+/* Center theme toggle button under nav for mobile */
+.theme-toggle {
+  display: block !important;
+  margin: 20px auto !important;
+  font-size: 1.8rem !important;
+  text-align: center !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  margin-right: 20px;
+}
+
+/* Tab navigation */
+.tab-navigation {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  width: 80% !important;
+  margin: 0 auto !important; /* Ensures the tab navigation stays centered */
+}
+
+/* Footer styling */
+footer {
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0px 0 !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+
+.footer-line {
+  width: 100% !important;
+  margin: 0 auto !important;
+  border: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+}
+ /* Adjust the skills-container positioning */
+ .skills-title-container {
+  margin-top: -80px; /* Adjust the top margin */
+  padding-left: 20px !important;
+  text-align: left !important; /* Keep title and description aligned left */
+}
+
+ /* Adjust overall container padding and alignment */
+ .skills-categories-container {
+  width: 100%; /* Full width on mobile */
+  padding: 0 20px; /* Add some padding for better spacing */
+  text-align: center; /* Center-align the category titles */
+}
+
+/* Adjust title for better readability and spacing */
+.skills-header {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  text-align: left;
+  width: 100%; /* Ensure the title spans the full width */
+  padding-left: 10px; /* Move the title left */
+  margin-top: 15px;
+}
+
+/* Adjust text to fit well and not overlap */
+.skills-description {
+  font-size: 1.1rem; /* Slightly smaller font size */
+  line-height: 1.7; /* Adjust line height */
+  margin-bottom: -10px; /* Space between the text and the skills section */
+  margin: 0 !important;
+  padding: 0 10px !important; /* Add a small horizontal padding for spacing */
+}
+
+  /* Backend and Frontend headers */
+  .skills-category-header {
+    font-size: 1.4rem; /* Smaller category header */
+    text-align: center; /* Center-align the category header */
+  }
+
+.skills-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Smaller gap for mobile */
+}
+
+
+.skills-card {
+  width: 40px; /* Smaller icon size */
+  height: 40px;
+  text-align: center;
+}
+
+.skills-card img {
+  width: 40px; /* Adjust image size */
+  height: 40px;
+}
+
+.skills-card p {
+  font-size: 0.9rem; /* Slightly smaller font size for skill names */
+}
+
+/* Certifications section adjustments */
+.certifications-list {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Smaller gap for certifications */
+  margin-bottom: 20px; /* Ensure space below certifications */
+}
+
+/* Certification card size */
+.certification-item {
+  flex-basis: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+  margin-left: -35px;
+  margin-bottom: 5px; /* Add minimal space between the image and text */
+  margin-top: 10px;
+}
+
+/* Certification text styling */
+.certification-item p {
+  font-size: 0.9rem; /* Adjust font size if needed */
+  line-height: 1.2; /* Adjust line height to move text closer to the logo */
+  margin-top: -5px;
+}
+
+.certification-item img {
+  width: 40px; /* Smaller icon for certifications */
+  height: 40px;
+  margin-top: 0; /* Remove top margin */
+  padding-top: 5px; /* Add a small padding if necessary */
+  font-size: 0.9rem; /* You can adjust the size of the text if needed */
+}
+
+.certifications-header {
+  font-size: 1.3rem; /* Smaller font size for certifications header */
+  text-align: center; /* Center-align the certifications header */
+  margin-bottom: 0px;
+  margin-top: 30px;
+  margin-left: -25px;
+}
+
+.certifications-section {
+  margin-bottom: 50px; /* Add space at the bottom of certifications section */
+}
+
+
+  /* Adjust the gap between the title and the skills */
+  .skills-certifications-layout {
+    margin-top: 30px !important; /* Reduce space between title and skills */
+  }
+
+  /* Move the skills grid higher */
+  .skills-category {
+    margin-top: -10px !important; /* Ensure the skills grid is closer to the title */
+  }
+
+  /* General Dark Mode Styling */
+body.dark-mode {
+  background-color:  #1a1a1a !important;
+  color: #ffffff !important;
+  font-size: 1rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: flex-start !important;
+  align-items: center !important;
+  min-height: 100vh !important;
+  overflow-y: auto !important;
+}
+
+/* Page Container Dark Mode */
+body.dark-mode .page-container {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+/* Footer Styling in Dark Mode */
+body.dark-mode footer {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+
+/* Footer Line Dark Mode */
+body.dark-mode .footer-line {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Footer Text Dark Mode */
+body.dark-mode .footer-content p {
+  color: #ffffff !important;
+}
+
+/* Dark Mode for Download CV Button */
+body.dark-mode .download-cv-btn {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+/* Dark Mode for Navigation Bar */
+body.dark-mode .nav-container {
+  background-color: #181818 !important;
+  box-shadow: none !important;
+}
+
+/* Dark Mode Tab Navigation */
+body.dark-mode .tab-navigation {
+  background-color: #181818 !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.15) !important;
+}
+
+body.dark-mode .tab-navigation .tab {
+  color: #ffffff !important;
+}
+
+body.dark-mode .tab-navigation .tab.active {
+  color: #00ff88 !important;
+}
+
+body.dark-mode .tab-navigation .tab:hover {
+  color: #00ff88 !important;
+}
+
+/* Skills Section Dark Mode */
+body.dark-mode .skills-title-container {
+  color: #ffffff !important;
+}
+
+body.dark-mode .skills-header {
+  color: #ffffff !important;
+}
+
+body.dark-mode .skills-description {
+  color: #ffffff !important;
+}
+
+/* Skills Card Dark Mode */
+body.dark-mode .skills-card p {
+  color: #ffffff !important;
+}
+
+body.dark-mode .skills-card img {
+  filter: brightness(0.9); /* Slightly darken images */
+}
+
+/* Certifications Section Dark Mode */
+body.dark-mode .certifications-header {
+  color: #ffffff !important;
+}
+
+body.dark-mode .certification-item p {
+  color: #ffffff !important;
+}
+
+/* Theme Toggle Button Dark Mode */
+body.dark-mode #theme-toggle {
+  background-color: #1a1a1a !important;
+  color: #cccccc !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Dark Mode for Skills Grid */
+body.dark-mode .skills-category-header {
+  color: #ffffff !important;
+}
+
+body.dark-mode .skills-certifications-separator {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
 }
