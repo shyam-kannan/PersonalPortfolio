@@ -664,19 +664,22 @@ body.dark-mode .timeline-item .timeline-date {
   transition: transform 0.3s ease;
 }
 
-/* Buttons styling */
-.tab-button {
-  padding: 10px 20px;
-  margin: 0 10px;
-  font-size: 1.2rem;
-  background-color: #000;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.buttons-container {
+  display: flex;
+  justify-content: left;
+  gap: 1px; /* Adjust the gap between the buttons */
+  margin-top: 20px; /* You can adjust the margin to control vertical spacing */
 }
 
+.tab-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 25px; /* Keep the rounded buttons */
+  background-color: #222;
+  color: #fff;
+  cursor: pointer;
+  border: none;
+}
 body.dark-mode .tab-button {
   background-color: #fff;
   color: #000;
@@ -774,4 +777,363 @@ body.dark-mode .footer-line {
 
 body.dark-mode .footer-content p {
   color: var(--text-color-dark);
+}
+
+/* List View Styling for Mobile */
+.list-view {
+  display: none; /* Hidden on desktop */
+  padding: 20px;
+}
+
+/* Style for Experience and Education Cards */
+.experience-card, .education-card {
+  display: flex;
+  justify-content: space-between; /* Ensures space between text and logo */
+  align-items: center; /* Vertically center the content */
+  padding: 15px;
+  margin: 15px 0; /* Add a bit more spacing between cards */
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Left side text content in the cards */
+.card-text {
+  flex: 1; /* Text takes full remaining space */
+  margin-left: 15px; /* Move text further left */
+  display: flex;
+  flex-direction: column; /* Stack title, description, and date vertically */
+}
+
+/* Company/School logo inside the cards */
+.card-logo {
+  width: 50px; /* Adjust size as needed */
+  height: 50px; /* Adjust size as needed */
+  object-fit: contain; /* Ensure logo maintains aspect ratio */
+  margin-left: 10px; /* Space between text and logo */
+}
+
+/* Adjust the title and description alignment */
+.card-text h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+  text-align: left; /* Ensure all titles are aligned left */
+}
+
+.card-text p {
+  font-size: 1rem;
+  color: #666;
+  margin: 5px 0 10px 0; /* Consistent spacing between job title and role */
+}
+
+/* Date formatting */
+.card-text .date {
+  font-size: 0.9rem;
+  color: #888;
+  margin: 0; /* No additional margin needed */
+}
+
+/* Ensure logos are vertically aligned with the title */
+.experience-card, .education-card {
+  align-items: flex-start; /* Align text and logo with the top of the card */
+}
+
+/* Ensures all logos are vertically centered with respect to the title */
+.experience-item, .education-item {
+  justify-content: space-between;
+}
+
+/* Dark Mode for List View */
+body.dark-mode .list-view .experience-item {
+  background-color: #222;
+  color: #fff;
+}
+
+body.dark-mode .list-view .experience-item:hover {
+  background-color: #333;
+}
+
+body.dark-mode .list-view .experience-item .date {
+  color: #aaa;
+}
+
+
+/* MEDIA QUERIES FOR MOBILE */
+@media (max-width: 768px) {
+  /* Remove page-container effect in mobile */
+  .page-container {
+    width: 100% !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background-color: #fff !important;
+    overflow-y: auto !important;
+  }
+
+  /* Body adjustments for mobile view */
+  body {
+    background-color: #fff !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: center !important;
+    min-height: 100vh !important;
+    overflow-y: auto !important;
+    padding-top: 0px !important; /* Remove excess padding on top */
+  }
+
+ /* Navigation container */
+.nav-container {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0px !important;
+  width: 80% !important;
+  margin: 0 auto !important; /* Ensures the nav container stays centered */
+}
+
+/* Center theme toggle button under nav for mobile */
+.theme-toggle {
+  display: block !important;
+  margin: 20px auto !important;
+  font-size: 1.8rem !important;
+  text-align: center !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+}
+
+/* Tab navigation */
+.tab-navigation {
+  display: flex !important;
+  justify-content: center !important;
+  gap: 5px !important;
+  width: 80% !important;
+  margin: 0 auto !important; /* Ensures the tab navigation stays centered */
+}
+
+/* Footer styling */
+footer {
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0px 0 !important;
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  background-color: #fff !important;
+  box-shadow: none !important;
+}
+
+.footer-line {
+  width: 100% !important;
+  margin: 0 auto !important;
+  border: 0.5px solid rgba(0, 0, 0, 0.1) !important;
+}
+
+ /* Adjust the entire hire-me-container positioning */
+ .hire-me-container {
+  margin-top: 150px; /* Increase top margin to move it away from the nav */
+  padding: 0 10px; /* Add padding to prevent text from touching screen edges */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px !important; /* Reduce the margin below "Why hire me?" */
+}
+
+.hire-me-title {
+  font-size: 2rem;
+  margin-bottom: 5px;
+  line-height: 1.2;
+  text-align: left;
+  width: 100%; /* Ensure the title spans the full width */
+  padding-left: 0px; /* Move the title left */
+}
+
+/* Ensure consistent height of card section to prevent shifting */
+.content-container {
+  min-height: calc(100vh - 200px); /* Adjust based on the total height */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Adjust text to fit well and not overlap */
+.hire-me-text {
+  font-size: 1.1rem; /* Adjust font size */
+  line-height: 1.7; /* Adjust line height */
+  margin-bottom: 20px; /* Add spacing below the description text */
+  margin-top: -6px;
+}
+
+.buttons-container {
+  display: flex !important;
+  justify-content: center !important; /* Center horizontally */
+  align-items: center !important; /* Align vertically */
+  gap: 10px !important; /* Space between the buttons */
+  width: 100% !important; /* Full width container */
+  margin-top: 20px !important;
+}
+
+/* Ensure buttons are side by side */
+.tab-button {
+  flex: 1 1 auto !important;
+  padding: 10px 20px !important;
+  width: auto !important;
+  text-align: center !important;
+  max-width: 140px !important;
+}
+
+/* Hide the timeline container for mobile */
+.timeline-container {
+  display: none !important;
+}
+
+  /* Style for Experience and Education Cards */
+  .experience-item {
+    display: flex;
+    justify-content: space-between; /* Space between text and logo */
+    align-items: center; /* Center content vertically */
+    padding: 15px;
+    margin-bottom: 10px;
+    margin: 10px 0;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Left side text content in the cards */
+  .experience-item h3, .experience-item p, .experience-item .date {
+    text-align: left;
+    margin-left: 0 !important; /* Align text to the left */
+  }
+
+  /* Company/School logo inside the cards */
+  .experience-item img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    object-fit: contain; /* Ensure the logo maintains aspect ratio */
+    margin-right: 0 !important; /* Move logo to the right edge */
+  }
+
+  /* Ensure scrolling for list */
+  .list-view {
+    margin-top: -100px !important; /* Move cards up */
+    padding-top: 0px !important;
+    flex-grow: 1; /* Allow the cards container to grow if needed */
+  }
+
+  /* Set a min-height for both experience and education lists */
+#experience-list, #education-list {
+  min-height: 500px; /* This keeps both lists from making the content shift */
+  margin-top: -90px; /* Adjust to move up as desired */
+}
+
+/* General Dark Mode Styles for mobile */
+body.dark-mode {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+  padding: 0 !important;
+}
+
+/* Navigation bar in dark mode (mobile) */
+body.dark-mode .nav-container {
+  background-color: #181818 !important;
+  box-shadow: none !important;
+}
+
+/* Footer in dark mode */
+body.dark-mode footer {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+/* Experience and Education Cards in dark mode */
+body.dark-mode .experience-item, body.dark-mode .education-item {
+  background-color: #333 !important;
+  color: #fff !important;
+  box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Card text color adjustments in dark mode */
+body.dark-mode .experience-item h3, body.dark-mode .education-item h3 {
+  color: #fff !important;
+}
+
+body.dark-mode .experience-item p, body.dark-mode .education-item p {
+  color: #ccc !important;
+}
+
+body.dark-mode .experience-item .date, body.dark-mode .education-item .date {
+  color: #888 !important;
+}
+
+/* Adjusting the text color inside the cards for readability */
+body.dark-mode .experience-content h3, body.dark-mode .education-content h3 {
+  color: #fff !important;
+}
+
+body.dark-mode .experience-content p, body.dark-mode .education-content p {
+  color: #d1d1d1 !important;
+}
+
+/* Logo and text alignment within the cards */
+body.dark-mode .experience-content, body.dark-mode .education-content {
+  display: flex;
+  justify-content: space-between; /* Align text to the left and logo to the right */
+}
+
+/* Company/School logo styling inside the cards */
+body.dark-mode .card-logo {
+  background-color: transparent !important;
+  object-fit: contain;
+}
+
+/* Tab buttons for Experience and Education in dark mode */
+body.dark-mode .tab-button {
+  background-color: #444 !important;
+  color: #fff !important;
+  border: 1px solid #555 !important;
+}
+
+/* Tab buttons hover effect */
+body.dark-mode .tab-button:hover {
+  background-color: #555 !important;
+  color: #00ff88 !important;
+}
+
+/* Adjustments for the title and description in dark mode */
+body.dark-mode .hire-me-container {
+  margin-top: 150px !important;
+  padding: 0 10px !important;
+}
+
+/* Ensure no unwanted text colors appear */
+body.dark-mode h1, body.dark-mode h2, body.dark-mode h3, body.dark-mode h4, body.dark-mode p {
+  color: #fff !important; /* Ensure all text is visible */
+}
+
+/* Background and text adjustments for the entire body */
+body.dark-mode .page-container {
+  background-color: #1a1a1a !important;
+  color: #fff !important;
+}
+
+/* Adjust buttons to look clear in dark mode */
+body.dark-mode .buttons-container button {
+  background-color: #444 !important;
+  color: #fff !important;
+}
+
+
+
+/* Adjustments for spacing in the list view */
+.list-view {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
 }
