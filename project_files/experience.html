@@ -33,11 +33,13 @@
         <div class="hire-me-container">
           <h1 class="hire-me-title">Why hire me?</h1>
           <p class="hire-me-text">I’m actively seeking roles where I can bring my expertise and passion for technology to a dynamic team. With a strong foundation in both frontend and backend development, I’m constantly learning and adapting to the latest industry trends, ready to tackle new challenges and make impactful contributions.</p>
-          <button class="tab-button active" id="experience-tab">Experience</button>
-          <button class="tab-button" id="education-tab">Education</button>
+          <div class="buttons-container">
+            <button class="tab-button active" id="experience-tab">Experience</button>
+            <button class="tab-button" id="education-tab">Education</button>
+          </div>
         </div>
 
-        <!-- Horizontal Timeline for Experience -->
+        <!-- Horizontal Timeline for Experience (Desktop View) -->
         <div class="timeline-container" id="experience-section">
           <div class="timeline">
             <!-- Timeline Item 1 (Up) - Zuora -->
@@ -45,7 +47,7 @@
               <div class="timeline-line"></div>
               <div class="timeline-dot"></div>
               <div class="timeline-circle">
-                <img src="images/zuora-logo@logotyp.us.svg" alt="Zuora Logo">
+                <img src="images/zuora-logo.svg" alt="Zuora Logo">
               </div>
               <div class="timeline-date">Present</div>
               <div class="timeline-description">
@@ -59,7 +61,7 @@
               <div class="timeline-line"></div>
               <div class="timeline-dot"></div>
               <div class="timeline-circle">
-                <img src="images/zuora-logo@logotyp.us.svg" alt="Zuora Logo">
+                <img src="images/zuora-logo.svg" alt="Zuora Logo">
               </div>
               <div class="timeline-date">2022</div>
               <div class="timeline-description">
@@ -73,7 +75,7 @@
               <div class="timeline-line"></div>
               <div class="timeline-dot"></div>
               <div class="timeline-circle">
-                <img src="Images/kwf_transparent.png" alt="Kashmir World Foundation Logo">
+                <img src="images/kwf_transparent.png" alt="Kashmir World Foundation Logo">
               </div>
               <div class="timeline-date">2021</div>
               <div class="timeline-description">
@@ -87,7 +89,7 @@
               <div class="timeline-line"></div>
               <div class="timeline-dot"></div>
               <div class="timeline-circle">
-                <img src="Images/enverus_transparent.png" alt="Enverus Logo">
+                <img src="images/enverus_transparent.png" alt="Enverus Logo">
               </div>
               <div class="timeline-date">2019</div>
               <div class="timeline-description">
@@ -98,13 +100,49 @@
           </div>
         </div>
 
-        <!-- Horizontal Timeline for Education -->
+        <!-- List View for Experience (Mobile View) -->
+        <div class="list-view" id="experience-list">
+          <div class="experience-item experience-card">
+            <div class="card-text">
+              <h3>Zuora</h3>
+              <p>Graduate Cloud Engineer</p>
+              <p class="date">Present</p>
+            </div>
+            <img src="images/zuora-logo.svg" alt="Zuora Logo" class="card-logo">
+          </div>
+          <div class="experience-item experience-card">
+            <div class="card-text">
+              <h3>Zuora</h3>
+              <p>Software Engineer Intern</p>
+              <p class="date">2022</p>
+            </div>
+            <img src="images/zuora-logo.svg" alt="Zuora Logo" class="card-logo">
+          </div>
+          <div class="experience-item experience-card">
+            <div class="card-text">
+              <h3>Kashmir World Foundation</h3>
+              <p>Artificial Intelligence Intern</p>
+              <p class="date">2021</p>
+            </div>
+            <img src="images/kwf_transparent.png" alt="Kashmir World Foundation Logo" class="card-logo">
+          </div>
+          <div class="experience-item experience-card">
+            <div class="card-text">
+              <h3>Enverus</h3>
+              <p>Software Engineer Intern</p>
+              <p class="date">2019</p>
+            </div>
+            <img src="images/enverus_transparent.png" alt="Enverus Logo" class="card-logo">
+          </div>
+        </div>
+
+        <!-- Horizontal Timeline for Education (Desktop View) -->
         <div class="timeline-container" id="education-section" style="display: none;">
           <div class="timeline">
             <!-- Timeline Item 1 (Up) -->
             <div class="timeline-item up">
               <div class="timeline-line"></div>
-              <div class="timeline-dot"></div> <!-- Dot added -->
+              <div class="timeline-dot"></div>
               <div class="timeline-circle">
                 <img src="images/san-jose-state-spartans.svg" alt="SJSU Logo">
               </div>
@@ -118,9 +156,9 @@
             <!-- Timeline Item 2 (Down) -->
             <div class="timeline-item down">
               <div class="timeline-line"></div>
-              <div class="timeline-dot"></div> <!-- Dot added -->
+              <div class="timeline-dot"></div>
               <div class="timeline-circle">
-                <img src="images/arizona-state-sun-devils-logo@logotyp.us.svg" alt="ASU Logo">
+                <img src="images/arizona-state-sun-devils-logo.svg" alt="ASU Logo">
               </div>
               <div class="timeline-date">2020</div>
               <div class="timeline-description">
@@ -128,6 +166,26 @@
                 <p>BS in Computer Science</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <!-- List View for Education (Mobile View) -->
+        <div class="list-view" id="education-list" style="display: none;">
+          <div class="experience-item education-card">
+            <div class="card-text">
+              <h3>SJSU</h3>
+              <p>Master's in AI</p>
+              <p class="date">2022</p>
+            </div>
+            <img src="images/san-jose-state-spartans.svg" alt="SJSU Logo" class="card-logo">
+          </div>
+          <div class="experience-item education-card">
+            <div class="card-text">
+              <h3>ASU</h3>
+              <p>BS in Computer Science</p>
+              <p class="date">2020</p>
+            </div>
+            <img src="images/arizona-state-sun-devils-logo.svg" alt="ASU Logo" class="card-logo">
           </div>
         </div>
 
@@ -147,4 +205,3 @@
 
 </body>
 </html>
-
